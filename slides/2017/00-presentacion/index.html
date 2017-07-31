@@ -37,9 +37,10 @@
 			<!-- ALL SLIDES GO HERE -->
 			<!-- Each section element contains an individual slide -->
 			<section>
-				<h1>Sistemas Operativos</h1>
-				<h2>F.R.C.U. - U.T.N.</h2>
+				<h2>Sistemas Operativos</h2>
+				<h3>F.R.C.U. - U.T.N.</h3>
 				<img id="codigo-qr" src="#" alt="Código QR" style="width: 6em;"/>
+				<p id="url"></p>
 			</section>
 
 			<section>
@@ -294,7 +295,9 @@
 				{ src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/plugin/notes/notes.js', async: true }
 			]
 		});
-		document.getElementById("codigo-qr").src =  "http://chart.apis.google.com/chart?cht=qr&chld=H|0&chs=300x300&chl="+escape(location)
+		var url = location.href;
+		document.getElementById("codigo-qr").src =  "http://chart.apis.google.com/chart?cht=qr&chld=H|0&chs=300x300&chl="+escape(url);
+		document.getElementById("url").innerHTML = url
 	</script>
 </body>
 </html>
