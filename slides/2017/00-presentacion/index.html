@@ -14,9 +14,6 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/reveal.css">
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/css/theme/black.css" id="theme">
 
-	<!-- For syntax highlighting -->
-	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/css/zenburn.css">
-
 	<!-- Printing and PDF exports -->
 	<script>
 				var link = document.createElement( 'link' );
@@ -42,8 +39,7 @@
 			<section>
 				<h1>Sistemas Operativos</h1>
 				<h2>F.R.C.U. - U.T.N.</h2>
-				<br />
-				<p>Ciclo Lectivo 2017</p>
+				<img id="codigo-qr" src="#" alt="Código QR" style="width: 6em;"/>
 			</section>
 
 			<section>
@@ -91,17 +87,17 @@
 					<h2>Horarios de Cursada</h2>
 					<div class="fragment fade-in">
 						<ul style="list-style-type: none;">
-							<li>Lunes de 22:30 a 23:55 (Aula 31)</li>
-							<li>Jueves de 19:00 a 19:45 (Aula 31)</li>
-							<li>Jueves de 19:45 a 21:30 (LISI)</li>
-							<li>Jueves de 21:30 a 23:55 (Aula 31)</li>
+							<li>Lunes de 17:30 a 19:00 (LISI)</li>
+							<li>Lunes de 19:00 a 20:30 (Aula 31)</li>
+							<li>Jueves de 19:45 a 23:15 (Aula 31)</li>
 						</ul>
 					</div>
 					<br />
 					<h2 class="fragment fade-in" >Horarios de Consulta</h2>
 					<div class="fragment fade-in">
 						<ul style="list-style-type: none;">
-							<li>Lunes de 21:00 a 22:15 (Oficina 35)</li>
+							<li>Lunes de 19:00 a 20:30 (Oficina 35)</li>
+							<li>Jueves de 18:15 a 19:00 (Oficina 35)</li>
 						</ul>
 					</div>
 				</section>
@@ -275,6 +271,8 @@
 	</div>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/js/head.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/js/reveal.min.js"></script>
+	<!-- For syntax highlighting -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/lib/css/zenburn.css">
 	<script>
 		// Full list of configuration options available here:
 		// https://github.com/hakimel/reveal.js#configuration
@@ -296,6 +294,7 @@
 				{ src: 'https://cdnjs.cloudflare.com/ajax/libs/reveal.js/3.5.0/plugin/notes/notes.js', async: true }
 			]
 		});
+		document.getElementById("codigo-qr").src =  "http://chart.apis.google.com/chart?cht=qr&chld=H|0&chs=300x300&chl="+escape(location)
 	</script>
 </body>
 </html>
