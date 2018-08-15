@@ -49,13 +49,14 @@ Donde:
 
 ### M - Muestra un mapa de memoria
 
-(Nos muestra las direcciones 00000 a 000B0)
+Sin dirección inicial, nos muestra las direcciones 00000 a 000B0)
 
-Para ver a partir de una dirección
-
+Para ver a partir de una dirección específica, se la pasa como parámetro:
 ```
 M 00000
 ```
+
+![Mapa de memoria de Commodore 128](./mapa_memoria_c128.gif "Mapa de memoria de Commodore 128")
 
 ### F - Llena un rango de direcciones con un valor
 
