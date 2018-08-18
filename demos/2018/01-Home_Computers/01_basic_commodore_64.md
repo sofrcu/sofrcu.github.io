@@ -53,7 +53,7 @@ Escribir:
 
 Tipear `RUN` (debería limpiar la pantalla)
 
-Para ver otros carcteres consultar una tabla ASCII: https://www.c64-wiki.com/wiki/PETSCII  
+Para ver otros caracteres consultar una tabla ASCII: https://www.c64-wiki.com/wiki/PETSCII  
 
 Manipular valores en memoria
 ----------------------------
@@ -80,6 +80,19 @@ PRINT PEEK(65534)
 - 255 = C Plus/4, C16
 - 114 = VIC20
 
+Commodore 64 "One-liners"
+-------------------------
+
+Imprime algo interesante:
+```basic
+10 PRINT CHR$(205.5+RND(1)); : GOTO 10
+```
+
+Imprime una "granizada" en la pantalla:
+```basic
+10 POKE 1024+RND(1)*1000,78: GOTO 10
+```
+
 Reproduce sonidos al azar:
 ```basic
 10 POKE 54272+INT(RND(1)*25),INT(RND(1)*256) : GOTO 10
@@ -87,4 +100,8 @@ Reproduce sonidos al azar:
 
 Tipear `RUN`
 
-Guía de Usuario del Commodore 64: http://www.commodore.ca/manuals/c64_users_guide/c64-users_guide-07-creating_sound.pdf
+Referencias
+-----------
+
+- *10 PRINT*, un libro sobre el impacto de la commodre: https://10print.org/
+- *Guía de Usuario del Commodore 64*: http://www.commodore.ca/manuals/c64_users_guide/c64-users_guide-07-creating_sound.pdf
