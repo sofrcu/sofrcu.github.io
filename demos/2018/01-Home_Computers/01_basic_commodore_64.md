@@ -27,19 +27,33 @@ Escribir:
 40 END
 ```
 
+Vemos el programa en memoria con `LIST`
+
 Tipear `RUN`
 
-Imprimir caracteres no visibles
--------------------------------
+Modificamos el programa escribiendo:
+```basic
+20 PRINT X + 1
+```
+
+Listamos para ver los cambios con `LIST`
+
+Ejecutamos nuevamente tipeando `RUN`
+
+
+Imprimir caracteres ASCII
+-------------------------
 
 Tipear `NEW`
 
 Escribir:
 ```basic
-10 PRINT CHR$(7)
+10 PRINT CHR$(147)
 ```
 
-Tipear RUN
+Tipear `RUN` (debería limpiar la pantalla)
+
+Para ver otros carcteres consultar una tabla ASCII: https://www.c64-wiki.com/wiki/PETSCII  
 
 Manipular valores en memoria
 ----------------------------
@@ -70,4 +84,7 @@ Reproduce sonidos al azar:
 ```basic
 10 POKE 54272+INT(RND(1)*25),INT(RND(1)*256) : GOTO 10
 ```
+
+Tipear `RUN`
+
 Guía de Usuario del Commodore 64: http://www.commodore.ca/manuals/c64_users_guide/c64-users_guide-07-creating_sound.pdf

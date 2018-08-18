@@ -18,9 +18,9 @@ Para ver los programas en el disco
 LIST
 ```
 
-Cargar el programa `POPEYE`
+Cargar el programa `POPEYE `
 ```basic
-LOAD "POPEYE",8
+LOAD "POPEYE ",8
 ```
 
 ```basic
@@ -85,12 +85,16 @@ GEOS para Drean Commodore 64
 Cargar la imagen `GEOSDR12.D64` en la diquetera #8.
 
 Para cargar el contenido de archivo especial $ del disco
+```basic
 LOAD "$",8
+```
 
 Para ver los programas en el disco
+```basic
 LIST
+```
 
 Para cargar y correr GEOS
+```basic
 LOAD "*",8,1
-
-RUN
+```
