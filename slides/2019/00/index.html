@@ -1,0 +1,290 @@
+<!doctype html>
+<html lang="es">
+<head>
+	<meta charset="utf-8">
+	<title>Sistemas Operativos 2019</title>
+	<meta name="description" content="Introducción a la Cátedra Sistemas Operativos">
+	<meta name="author" content="Gabriel Arellano">
+
+	<meta name="apple-mobile-web-app-capable" content="yes" />
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+	<link rel="stylesheet" href="../../reveal.js/3.7.0/css/reveal.css">
+	<link rel="stylesheet" href="../../reveal.js/3.7.0/css/theme/black.css" id="theme">
+
+	<!-- Printing and PDF exports -->
+	<script>
+				var link = document.createElement( 'link' );
+				link.rel = 'stylesheet';
+				link.type = 'text/css';
+				link.href = window.location.search.match( /print-pdf/gi ) ? '../../reveal.js/3.7.0/css/print/pdf.css' : '../../reveal.js/3.7.0/css/print/paper.css';
+				document.getElementsByTagName( 'head' )[0].appendChild( link );
+	</script>
+
+	<!--[if lt IE 9]>
+	<script src="../../reveal.js/3.7.0/lib/js/html5shiv.js"></script>
+	<![endif]-->
+
+</head>
+
+<body>
+	<!-- Wrap the entire slide show in a div using the "reveal" class. -->
+	<div class="reveal">
+		<!-- Wrap all slides in a single "slides" class -->
+		<div class="slides">
+			<!-- ALL SLIDES GO HERE -->
+			<!-- Each section element contains an individual slide -->
+			<section>
+				<h2>Sistemas Operativos</h2>
+				<h3>F.R.C.U. - U.T.N.</h3>
+				<img id="codigo-qr" src="#" alt="Código QR" style="width: 6em;"/>
+				<p id="url"></p>
+			</section>
+
+			<section>
+				<section>
+					<h2>Datos de la cátedra</h2>
+					<br />
+				    <ul class="fragment fade-in" style="list-style-type: none;">
+				    	<li><strong>Nombre:</strong> Sistemas Operativos.</li>
+				    	<li><strong>Código:</strong> K952A</li>
+				    	<li><strong>Área:</strong> Computación.</li>
+				    	<li><strong>Régimen de Dictado:</strong> Cuatrimestral.</li>
+				    	<li><strong>Carga Horaria Semanal:</strong> 8 horas (cátedra).</li>
+				    	<li><strong>Carga Horaria Total:</strong> 128 horas (cátedra).</li>
+				    </ul>
+				</section>
+				<section>
+					<h2>Mecanismos de Contacto</h2>
+					<br />
+					<ul style="list-style-type: none;">
+						<li class="fragment fade-in"><strong>Página Web: </strong>
+							<a href="http://gabriel-arellano.com/sofrcu/">http://gabriel-arellano.com/sofrcu/</a></li>
+						<li class="fragment fade-in"><strong>Página Facebook: </strong>
+								<a href="https://www.facebook.com/sofrcu/">http://fb.com/sofrcu/</a></li>
+						<li class="fragment fade-in"><strong>Grupo Facebook: </strong>
+									<a href="https://www.facebook.com/groups/sofrcu/">http://fb.com/groups/sofrcu/</a></li>
+						<li class="fragment fade-in"><strong>Twitter:</strong>
+									<a href="https://twitter.com/sofrcu/">@sofrcu</a></li>
+					</ul>
+				</section>
+				<section>
+					<h2>Docentes</h2>
+					<br />
+					<div class="fragment fade-in">
+						<h3>Ing. Gabriel Arellano</h3>
+						<p>Profesor Adjunto Interino <br />
+							<a href="https://twitter.com/aretche/">@AreTchE</a> // gabrielarellano[arroba]gmail.com</p>
+					</div>
+					<div class="fragment fade-in">
+						<h3>Ing. Osvaldo Aguiar</h3>
+						<p>Jefe de TP Ordinario <br/>
+							<a href="https://twitter.com/eltotoaguiar/">@elTotoaguiar</a> // osvaldo.aguiar[arroba]gmail.com</p>
+					</div>
+				</section>
+				<section>
+					<h2>Horarios de Cursada</h2>
+					<div class="fragment fade-in">
+						<ul style="list-style-type: none;">
+							<li>Lunes de 17:30 a 19:45 (Aula 31 / LISI)</li>
+							<li>Jueves de 19:45 a 23:55 (Aula 31)</li>
+						</ul>
+					</div>
+					<br />
+					<h2 class="fragment fade-in" >Horarios de Consulta</h2>
+					<div class="fragment fade-in">
+						<ul style="list-style-type: none;">
+							<li>Jueves de 18:00 a 19:45 (Coordinar por mail)</li>
+						</ul>
+					</div>
+				</section>
+			</section>
+			<section>
+				<section>
+					<h2>Objetivos</h2>
+					<blockquote class="fragment fade-in">
+						Preparar al alumno para diseñar sistemas de información teniendo en cuenta los servicios que brindan los sistemas operativos de propósito general.
+					</blockquote>
+				</section>
+				<section>
+					<h2>Programa Sintético</h2>
+				    <blockquote class="fragment fade-in">
+				    	Generalidades de Sistemas Operativos: Objetivos, Principios de Diseño, Componentes y Arquitectura. Servicios prestados por los Sistemas Operativos. Sistemas Operativos de Propósito Específico. Estudio Comparativo de Sistemas Operativos.
+				    </blockquote>
+				</section>
+				<section>
+					<h2>Programa Analítico</h2>
+				    <ul style="list-style-type: none;">
+				    	<li class="fragment fade-in">Introducción a los Sistemas Operativos</li>
+				    	<li class="fragment fade-in">Sistemas Operativos Monoproceso</li>
+				    	<li class="fragment fade-in">Sistemas Operativos Multitarea de Usuario Único</li>
+				    	<li class="fragment fade-in">Sistemas Operativos Multitarea y Multiusuario</li>
+				    	<li class="fragment fade-in">Sistemas Operativos de Propósito Específico</li>
+				    </ul>
+				</section>
+				<section>
+					<h2>Evaluación</h2>
+					<br />
+					<div class="fragment fade-in">
+						<p class="fragment highlight-red">Conceptual y Objetiva</p>
+						<p class="fragment highlight-blue">Teoría, Práctica y Actividades aúlicas</p>
+						<p class="fragment highlight-green">Parciales, Recuperatorios, Trabajos Prácticos</p>
+    			</div>
+				</section>
+				<section>
+						<h2>Recursos didácticos</h2>
+						<br />
+						<ul style="list-style-type: none;">
+								<li class="fragment fade-in"><strong>Lista de lecturas.</strong></li>
+								<li class="fragment fade-in"><strong>Presentaciones.</strong></li>
+								<li class="fragment fade-in"><strong>Guías de Laboratorio.</strong></li>
+								<li class="fragment fade-in"><strong>Máquinas Virtuales y Emuladores.</strong></li>
+								<li class="fragment fade-in"><strong>Animaciones y Simuladores.</strong></li>
+								<li class="fragment fade-in"><strong>Películas y Documentales.</strong></li>
+						</ul>
+				</section>
+		  </section>
+			<section>
+				<section>
+					<h2>Libros de Cabecera</h2>
+					<img src="img/portada-ssoo-ueee-elmasri-grande.jpg" alt="Portada" style="float: left; width: 300px;"/>
+					<br />
+					<h3>Sistemas Operativos: Un enfoque en espiral</h3>
+					<ul style="list-style-type: none;">
+						<li><strong>Autor:</strong> Rames Elmasri y otros.</li>
+						<li><strong>Editorial:</strong> McGraw-Hill.</li>
+						<li><strong>Edición:</strong> 1era. Edición (2010).</li>
+						<li><strong>ISBN:</strong> 978-607-15-0309-1.</li>
+						<li><strong>Ejemplares:</strong> 2.</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Libros de Cabecera</h2>
+					<img src="img/portada-ssoo-va.jpg" alt="Portada" style="float: left; width: 300px;"/>
+					<br />
+					<h3>Sistemas Operativos: Una visión Aplicada</h3>
+					<ul style="list-style-type: none;">
+						<li><strong>Autor:</strong> Jesús Carretero y otros.</li>
+						<li><strong>Editorial:</strong> McGraw-Hill.</li>
+						<li><strong>Edición:</strong> 1era. Edición (2001).</li>
+						<li><strong>ISBN:</strong> 84-481-3001-4.</li>
+						<li><strong>Ejemplares:</strong> 10.</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Otros Libros</h2>
+					<img src="img/portada-ssoo-mciver.jpg" alt="Portada" style="float: left; width: 300px;"/>
+					<br />
+					<h3>Sistemas Operativos</h3>
+					<ul style="list-style-type: none;">
+						<li><strong>Autor:</strong> McIver McHoes, Flynn.</li>
+						<li><strong>Editorial:</strong> Cengage Learning.</li>
+						<li><strong>Edición:</strong> 6ta. Edición (2011).</li>
+						<li><strong>ISBN:</strong> 978-1-4390-7920-1.</li>
+						<li><strong>Ejemplares:</strong> 1.</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Otros Libros</h2>
+					<img src="img/portada-fundamentos-ssoo-7ma-ed.jpg" alt="Portada" style="float: left; width: 300px;"/>
+					<br />
+					<h3>Fundamentos de Sistemas Operativos</h3>
+					<ul style="list-style-type: none;">
+						<li><strong>Autor:</strong> Silberschatz, Galvin, Gagne.</li>
+						<li><strong>Editorial:</strong> McGraw-Hill.</li>
+						<li><strong>Edición:</strong> 7ma. Edición (2005).</li>
+						<li><strong>ISBN:</strong> 84-481-4641-7.</li>
+						<li><strong>Ejemplares:</strong> 4.</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Otros Libros</h2>
+					<img src="img/portada-ssoo-modernos-1ra-ed.jpg" alt="Portada" style="float: left; width: 300px;"/>
+					<br />
+					<h3>Sistemas Operativos Modernos</h3>
+					<ul style="list-style-type: none;">
+						<li><strong>Autor:</strong> A. S. Tanenbaum.</li>
+						<li><strong>Editorial:</strong> Prentice-Hall</li>
+						<li><strong>Edición:</strong> 1ra. Edición (1992).</li>
+						<li><strong>ISBN:</strong> 968-880-323-5.</li>
+						<li><strong>Ejemplares:</strong> 6.</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Otros Libros</h2>
+					<img src="img/portada-ssoo-modernos-2da-ed.jpg" alt="Portada" style="float: left; width: 300px;"/>
+					<br />
+					<h3>Sistemas Operativos Modernos</h3>
+					<ul style="list-style-type: none;">
+						<li><strong>Autor:</strong> A. S. Tanenbaum.</li>
+						<li><strong>Editorial:</strong> Prentice-Hall.</li>
+						<li><strong>Edición:</strong> 2da. Edición (2003).</li>
+						<li><strong>ISBN:</strong> 970-26-0315-3.</li>
+						<li><strong>Ejemplares:</strong> 3.</li>
+					</ul>
+				</section>
+				<section>
+					<h2>Otros Libros</h2>
+					<img src="img/portada-ssoo-modernos-3ra-ed.jpg" alt="Portada" style="float: left; width: 300px;"/>
+					<br />
+					<h3>Sistemas Operativos Modernos</h3>
+					<ul style="list-style-type: none;">
+						<li><strong>Autor:</strong> A. S. Tanenbaum.</li>
+						<li><strong>Editorial:</strong> Pearson Educación.</li>
+						<li><strong>Edición:</strong> 3ra. Edición (2009).</li>
+						<li><strong>ISBN:</strong> 978-607-442-046.</li>
+						<li><strong>Ejemplares:</strong> 3.</li>
+					</ul>
+				</section>
+			</section>
+			<section>
+					<br /><br />
+					<h1>Gracias!</h1>
+					<a href="https://gabriel-arellano.com/sofrcu/">https://gabriel-arellano.com/sofrcu/</a>
+					<br />
+					<div>
+							<a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">
+									<img alt="Licencia Creative Commons" style="border-width:0; height: 1.5em;" src="img/cc-by-sa.png" />
+							</a>
+					</div>
+					<div>
+							Esta obra de <a xmlns:cc="https://creativecommons.org/ns#" href="https://github.com/aretche/" property="cc:attributionName" rel="cc:attributionURL">Gabriel Arellano</a> está bajo una licencia <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons Atribución-CompartirIgual 4.0 Internacional.</a>
+					</div>
+			</section>
+		</div>
+	</div>
+	<script src="../../reveal.js/3.7.0/lib/js/head.min.js"></script>
+	<script src="../../reveal.js/3.7.0/js/reveal.js"></script>
+	<!-- For syntax highlighting -->
+	<link rel="stylesheet" href="../../reveal.js/3.7.0/lib/css/zenburn.css">
+	<script>
+		// Full list of configuration options available here:
+		// https://github.com/hakimel/reveal.js#configuration
+		Reveal.initialize({
+			controls: true,
+			progress: true,
+			history: true,
+			center: true,
+
+			transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+            pdfSeparateFragments: false, //Que imprima todas los fragmentos en una sola hoja
+
+			// Optional reveal.js plugins
+			dependencies: [
+				{ src: '../../reveal.js/3.7.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: '../../reveal.js/3.7.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: '../../reveal.js/3.7.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+				{ src: '../../reveal.js/3.7.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+				{ src: '../../reveal.js/3.7.0/plugin/zoom-js/zoom.js', async: true },
+				{ src: '../../reveal.js/3.7.0/plugin/notes/notes.js', async: true }
+			]
+		});
+		var url = 'http://bit.ly/2yEDNiP';
+		document.getElementById("codigo-qr").src =  "https://chart.apis.google.com/chart?cht=qr&chld=H|0&chs=300x300&chl="+escape(url);
+		document.getElementById("url").innerHTML = url
+	</script>
+</body>
+</html>
