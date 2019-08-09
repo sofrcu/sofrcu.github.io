@@ -6,25 +6,26 @@
 	<meta name="description" content="Introducción a la Cátedra Sistemas Operativos">
 	<meta name="author" content="Gabriel Arellano">
 
-	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
 
-	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-	<link rel="stylesheet" href="../../reveal.js/3.7.0/css/reveal.css">
-	<link rel="stylesheet" href="../../reveal.js/3.7.0/css/theme/black.css" id="theme">
+	<link rel="stylesheet" href="../../reveal.js/3.8.0/css/reset.css">
+	<link rel="stylesheet" href="../../reveal.js/3.8.0/css/reveal.css">
+	<link rel="stylesheet" href="../../reveal.js/3.8.0/css/theme/black.css" id="theme">
 
 	<!-- Printing and PDF exports -->
 	<script>
-				var link = document.createElement( 'link' );
-				link.rel = 'stylesheet';
-				link.type = 'text/css';
-				link.href = window.location.search.match( /print-pdf/gi ) ? '../../reveal.js/3.7.0/css/print/pdf.css' : '../../reveal.js/3.7.0/css/print/paper.css';
-				document.getElementsByTagName( 'head' )[0].appendChild( link );
+		var link = document.createElement( 'link' );
+		link.rel = 'stylesheet';
+		link.type = 'text/css';
+		link.href = window.location.search.match( /print-pdf/gi ) ? '../../reveal.js/3.8.0/css/print/pdf.css' : '../../reveal.js/3.8.0/css/print/paper.css';
+		document.getElementsByTagName( 'head' )[0].appendChild( link );
 	</script>
 
 	<!--[if lt IE 9]>
-	<script src="../../reveal.js/3.7.0/lib/js/html5shiv.js"></script>
+	<script src="../../reveal.js/3.8.0/lib/js/html5shiv.js"></script>
 	<![endif]-->
 
 </head>
@@ -255,10 +256,10 @@
 			</section>
 		</div>
 	</div>
-	<script src="../../reveal.js/3.7.0/lib/js/head.min.js"></script>
-	<script src="../../reveal.js/3.7.0/js/reveal.js"></script>
+	<script src="../../reveal.js/3.8.0/lib/js/head.min.js"></script>
+	<script src="../../reveal.js/3.8.0/js/reveal.js"></script>
 	<!-- For syntax highlighting -->
-	<link rel="stylesheet" href="../../reveal.js/3.7.0/lib/css/zenburn.css">
+	<link rel="stylesheet" href="../../reveal.js/3.8.0/lib/css/zenburn.css">
 	<script>
 		// Full list of configuration options available here:
 		// https://github.com/hakimel/reveal.js#configuration
@@ -267,19 +268,19 @@
 			progress: true,
 			history: true,
 			center: true,
+			hideCursorTime: 1000,
+			hash: true,
 
 			transition: 'slide', // none/fade/slide/convex/concave/zoom
 
-            pdfSeparateFragments: false, //Que imprima todas los fragmentos en una sola hoja
+			pdfSeparateFragments: false, //Que imprima todas los fragmentos en una sola hoja
 
-			// Optional reveal.js plugins
+			// Optional reveal.js plugins. More info https://github.com/hakimel/reveal.js#dependencies
 			dependencies: [
-				{ src: '../../reveal.js/3.7.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
-				{ src: '../../reveal.js/3.7.0/plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-				{ src: '../../reveal.js/3.7.0/plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
-				{ src: '../../reveal.js/3.7.0/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
-				{ src: '../../reveal.js/3.7.0/plugin/zoom-js/zoom.js', async: true },
-				{ src: '../../reveal.js/3.7.0/plugin/notes/notes.js', async: true }
+				{ src: '../../reveal.js/3.8.0/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+				{ src: '../../reveal.js/3.8.0/plugin/search/search.js', async: true },
+				{ src: '../../reveal.js/3.8.0/plugin/zoom-js/zoom.js', async: true },
+				{ src: '../../reveal.js/3.8.0/plugin/notes/notes.js', async: true }
 			]
 		});
 		var url = 'http://bit.ly/2yEDNiP';
