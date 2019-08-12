@@ -1,8 +1,6 @@
-Aplicaciones MSX
-================
+# Aplicaciones MSX
 
-Juegos MSX en la Talent DPC-200
--------------------------------
+## Juegos MSX en la Talent DPC-200
 
 Iniciar openMSX Catapult y seleccionar "Talent DPC-200" en MSX Type.
 
@@ -23,8 +21,7 @@ Cargar la ROM `Goonies_The-1986-Konami-J.rom` en la unidad de cartuchos A.
 Cargar la ROM `F1_Spirit-1987-Konami-J.rom` en la unidad de cartuchos A.
 
 
-Juegos MSX2 en la Talent TPC-310
---------------------------------
+## Juegos MSX2 en la Talent TPC-310
 
 Iniciar openMSX Catapult y seleccionar "Talent TPC-310" en MSX Type.
 
