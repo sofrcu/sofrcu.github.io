@@ -12,7 +12,7 @@
 # 2. Archivo con la ROM de una Macintosh Plus
 #    - wget http://www.redundantrobot.com/sheepshaver_files/roms/vmac.rom.zip
 #    - 7z e vmac.rom.zip vmac.rom; rm vmac.rom.zip; mv vmac.rom vMac.ROM
-# 3. Imagenes de disco con MacOS 2.0 
+# 3. Imagenes de disco con MacOS 3.2
 #    - wget 'https://www.oldschoolos.com/Mac/Mac%20OS%203.0/Apple%20Mac%20OS%203.2%20(Finder%205.3)%20(3.25).7z'
 #    - 7z e 'Apple Mac OS 3.2 (Finder 5.3) (3.25).7z' '*.image' -r
 #    - mv 'System 3.2, Finder 5.3.image' disk1.dsk;
