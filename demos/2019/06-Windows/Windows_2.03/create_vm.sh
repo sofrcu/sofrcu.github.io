@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-# Windows 1.0 en VirtualBox
+# Windows 2.03 en VirtualBox
 #
 # Requisitos: 
 # 1. VirtualBox OSE y 7zip
