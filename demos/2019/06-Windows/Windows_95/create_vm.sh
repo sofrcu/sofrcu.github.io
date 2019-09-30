@@ -13,6 +13,7 @@
 #    - 7z e FIX95CPU_V3_FINAL.ZIP FIX95CPU.IMA; rm FIX95CPU_V3_FINAL.ZIP;
 # 4. Descargar programas adicionales
 #    - wget -P share https://archive.org/download/DiabloIiDemo/DiabloIIDemo.exe
+
 export VM="MS Windows 95"
 # VBoxManage list ostypes
 VBoxManage createvm --name "$VM" --ostype "Windows95" --basefolder . --register
@@ -29,6 +30,8 @@ VBoxManage modifyvm "$VM" --boot1 floppy --boot2 disk --boot3 none --boot4 none
 VBoxManage modifyvm "$VM" --memory 512 --vram 128
 VBoxManage modifyvm "$VM" --audiocontroller sb16
 VBoxManage modifyvm "$VM" --nic1 nat
-VBoxManage sharedfolder add "$VM" --name "ShareDirectory" --hostpath "$PWD/share"
 # Iniciamos la máquina para aplicar el parche
 VBoxManage startvm "$VM" --type separate
+
+# Opcional: crear un ISO con los archivos adicionales
+# rm share.iso; mkisofs -l -input-charset default -allow-lowercase -allow-multidot -o share.iso ./share
