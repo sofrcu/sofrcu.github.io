@@ -1,12 +1,7 @@
-*.EXE
-*.exe
-*.zip
-*.ZIP
-*.ima
-*.IMA
-*.img
-*.IMG
-*.7z
-*.7Z
-*.vdi
-*.VDI
+# Ignore everything
+*
+# But not these files...
+!.gitignore
+!create_vm.sh
+!start.sh
+!*/share/.gitkeep
