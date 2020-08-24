@@ -1,0 +1,316 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Sistemas Operativos Monotarea</title>
+    <meta name="description" content="Sistemas Operativos Monotarea">
+    <meta name="author" content="Gabriel Arellano">
+
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <link rel="stylesheet" href="../../reveal.js/4.0.2/dist/reveal.css">
+    <link rel="stylesheet" href="../../reveal.js/4.0.2/dist/theme/black.css" id="theme">
+
+    <!-- Printing and PDF exports -->
+    <script>
+        var link = document.createElement('link');
+        link.rel = 'stylesheet';
+        link.type = 'text/css';
+        link.href = window.location.search.match(/print-pdf/gi) ? '../../reveal.js/4.0.2/css/print/pdf.css' : '../../reveal.js/4.0.2/css/print/paper.css';
+        document.getElementsByTagName('head')[0].appendChild(link);
+    </script>
+
+</head>
+
+<body>
+<!-- Wrap the entire slide show in a div using the "reveal" class. -->
+<div class="reveal">
+    <!-- Wrap all slides in a single "slides" class -->
+    <div class="slides">
+        <!-- ALL SLIDES GO HERE -->
+        <!-- Each section element contains an individual slide -->
+        <section>
+            <h2>Unidad 2</h2>
+            <h3>Sistemas Operativos Monotarea</h3>
+            <img id="codigo-qr" src="#" alt="Código QR" style="width: 6em;"/>
+            <p id="url"></p>
+        </section>
+        <section>
+            <section>
+                <h2>Ejecución de Programas</h2>
+                <br/>
+                <p class="fragment fade-in">La función primordial de un S.O. es la ejecución de programas.</p>
+                <p class="fragment fade-in">Un programa es estático.</p>
+                <p class="fragment fade-in">El S.O. carga el programa en memoria. <span class="fragment fade-in"> Esa entidad dinámica es conocida como <span
+                        class="fragment highlight-red">proceso</span>.</span></p>
+            </section>
+            <section>
+                <h2>Estado de un Proceso</h2>
+                <p class="fragment fade-in">A medida que un proceso se ejecuta va cambiando su estado.</p>
+                <p class="fragment fade-in">Qué información define el estado del proceso?</p>
+                <ul>
+                    <li class="fragment fade-in">Registros de la CPU</li>
+                    <li class="fragment fade-in">Puntero de pila y heap</li>
+                    <li class="fragment fade-in">Archivos abiertos y posición en los mismos.</li>
+                </ul>
+                <p class="fragment fade-in">El S.O. debe almacenar esta información?</p>
+            </section>
+            <section>
+                <h2>Bloque de Control de Procesos</h2>
+                <img style="float: left; height: 8em;" src="img/8_1-Bloque_Control_Proceso.png"
+                     alt="Bloque de Control de Procesos"/>
+                <p class="fragment fade-in">Estructura que almacena la información de los procesos del sistema.</p>
+                <p class="fragment fade-in">Se actualiza cuando el proceso deja de correr.</p>
+            </section>
+            <section>
+                <h2>Estados de un Proceso</h2>
+                <img style="float: left; height: 8em;" src="img/8_2-Modelo_7_Estados.png"
+                     alt="Diagrama transición de estados"/>
+                <p class="fragment fade-in">Hay modelos con diferentes números de estados.</p>
+                <p class="fragment fade-in">Con excepción de Ejecutando puede haber varios procesos en cada estado.</p>
+            </section>
+            <section>
+                <h2>Planificación de Procesos</h2>
+                <p class="fragment fade-in">Cuál de los procesos "Listos" obtiene la CPU?.</p>
+                <br/>
+                <ul>
+                    <li class="fragment fade-in">FCFS (Primero en llegar, primero en ser atendido).</li>
+                    <li class="fragment fade-in">Por Prioridades.</li>
+                    <li class="fragment fade-in">Garantizada.</li>
+                    <li class="fragment fade-in">(SRTF) Siguiente el trabajo más corto.</li>
+                    <li class="fragment fade-in">(HRRN) Siguiente mayor tasa de respuesta.</li>
+                </ul>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Memoria Principal</h2>
+                <br/>
+                <p class="fragment fade-in">Por qué administrar la memoria principal?.</p>
+                <ul>
+                    <li class="fragment fade-in">Cargar la mayor cantidad de procesos.</li>
+                    <li class="fragment fade-in">LLevar registro de que está libre, asignado y a quién.</li>
+                    <li class="fragment fade-in">Brindar de manera transparente la memoria que requieran las
+                        aplicaciones.
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2>Creación de Programas</h2>
+                <ol>
+                    <li class="fragment fade-in">Escritura de código fuente.</li>
+                    <li class="fragment fade-in">Compilación.</li>
+                    <li class="fragment fade-in">Enlazado.</li>
+                    <li class="fragment fade-in">Carga en memoria.</li>
+                    <li class="fragment fade-in">Ejecución.</li>
+                </ol>
+            </section>
+            <section>
+                <h2>Un solo proceso</h2>
+                <img src="img/10_1-SO_Unico_Proceso.png" alt="" style="height: 8em;"/>
+            </section>
+            <section>
+                <h2>Reubicación dinámica</h2>
+                <img style="height: 6em;" src="img/10_2-SO_Monoproceso_Reubicacion.png" alt=""/>
+                <img style="height: 6em;" src="img/10_3-Traduccion_Direcciones_MMU.png" alt=""/>
+            </section>
+            <section>
+                <h2>Overlays</h2>
+                <img src="img/10_4-Programa_Overlays.png" alt="" style="height: 8em;"/>
+            </section>
+            <section>
+                <h2>Swapping</h2>
+                <img src="img/10_5-Programa_Swapping.png" alt="" style="height: 8em;"/>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Archivos</h2>
+                <br/>
+                <h3>¿Por qué son necesarios los archivos?</h3>
+                <br/>
+            </section>
+            <section>
+                <h2>Directorios</h2>
+                <p class="fragment fade-in">Estructura Lógica.</p>
+                <ul>
+                    <li class="fragment fade-in">Un solo nivel.</li>
+                    <li class="fragment fade-in">Árbol.</li>
+                    <li class="fragment fade-in">Grafo acíclico.</li>
+                </ul>
+                <br/>
+            </section>
+            <section>
+                <h2>Un solo nivel</h2>
+                <img style="height: 10em;" src="img/12_2-Directorio_Un_Nivel.png"/>
+            </section>
+            <section>
+                <h2>Estructura de Árbol</h2>
+                <img style="height: 10em;" src="img/12_3-Estructura_Arbol.png"/>
+            </section>
+            <section>
+                <h2>Grafo acíclico</h2>
+                <img style="height: 10em;" src="img/12_4-Grafo_Aciclico.png"/>
+            </section>
+            <section>
+                <h2>Métodos de Acceso</h2>
+                <p class="fragment fade-in">Los programas necesitan diferentes maneras de acceder al contenido del
+                    archivo.</p>
+                <ul>
+                    <li class="fragment fade-in">Acceso secuencial.</li>
+                    <li class="fragment fade-in">Acceso aleatorio.</li>
+                    <li class="fragment fade-in">Métodos de alto nivel.</li>
+                    <li class="fragment fade-in">Acceso en bruto (raw).</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Gestión de Espacio Libre</h2>
+                <p class="fragment fade-in">El S.O. almacenará los datos de los archivos y directorios en bloques del
+                    disco.
+                    <span class="fragment fade-in">Para ello debe saber cuáles bloques no han sido utilizados aún.</span>
+                </p>
+                <p class="fragment fade-in">Se suele emplear una de estas técnicas:</p>
+                <ul>
+                    <li class="fragment fade-in">Lista enlazada.</li>
+                    <li class="fragment fade-in">Lista enlazada mejorada usando:
+                        <ul>
+                            <li class="fragment fade-in">Índices</li>
+                            <li class="fragment fade-in">Grupos</li>
+                        </ul>
+                    </li>
+                    <li class="fragment fade-in">Mapas de bits.</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Lista enlazada</h2>
+                <img style="height: 10em;" src="img/12_9-Espacio_Libre_Enlazado.png"/>
+            </section>
+            <section>
+                <h2>Lista enlazada con índices</h2>
+                <img style="height: 10em;" src="img/12_10-Espacio_Libre_Indexado.png"/>
+            </section>
+            <section>
+                <h2>Lista enlazada con grupos</h2>
+                <img style="height: 10em;" src="img/12_11-Espacio_Libre_Agrupado.png"/>
+            </section>
+            <section>
+                <h2>Mapas de bits</h2>
+                <img style="height: 10em;" src="img/12_12-Espacio_Libre_Bitmaps.png"/>
+            </section>
+            <section>
+                <h2>Gestión de Espacio Ocupado</h2>
+
+            </section>
+            <section>
+                <h2>Asignación contigua</h2>
+                <img style="height: 10em;" src="img/12_13-Asignacion_Contigua.png"/>
+            </section>
+            <section>
+                <h2>Asignación enlazada</h2>
+                <img style="height: 10em;" src="img/12_14-Asignacion_Enlazada.png"/>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Entrada / Salida</h2>
+            </section>
+            <section>
+                <h2>Dispositivos</h2>
+                <p class="fragment fade-in">El S.O. debe tener en cuenta las caraterísticas de los dipositivos:</p>
+                <ul>
+                    <li class="fragment fade-in">Acceso secuencial o aleatorio.</li>
+                    <li class="fragment fade-in">Clase de dispositivo.
+                    <ul>
+                        <li class="fragment fade-in">de bloques.</li>
+                        <li class="fragment fade-in">de caracteres.</li>
+                        <li class="fragment fade-in">de red.</li>
+                    </ul>
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2>Tecnologías de E/S</h2>
+                <p class="fragment fade-in">El S.O. debe tener en cuenta las tecnologías de E/S:</p>
+                <ul>
+                    <li class="fragment fade-in">Buffers.</li>
+                    <li class="fragment fade-in">Cachés.</li>
+                    <li class="fragment fade-in">Operaciones en bloque.</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Organización Física de Discos</h2>
+                <img style="height: 10em;" src="img/14_2-Estructura_Disco.png"/>
+            </section>
+            <section>
+                <h2>Organización Lógica de Discos</h2>
+                <img style="height: 10em;" src="img/14_3-Estructura_Logica.png"/>
+            </section>
+        </section>
+        <section>
+            <h2>Bibliografía</h2>
+            <br/>
+            <ul style="float: left; list-style-type: none;">
+                <li><strong>Elmasri</strong> - S.O.: Un enfoque en espiral.</li>
+                <ul>
+                    <li>Capítulo 8: Secciones 8.1 a 8.4.5</li>
+                    <li>Capítulo 10: Secciones 10.1 a 10.3</li>
+                    <li>Capítulo 12: Secciones 12.1 a 12.5.2</li>
+                    <li>Capítulo 14: Secciones 14.1 a 14.5</li>
+                </ul>
+            </ul>
+            <img src="img/portada-ssoo-ueee-elmasri-grande.jpg" alt="Portada Elmasri"
+                 style="float: right; height: 5em;"/>
+            <br/>
+        </section>
+        <section>
+            <br/><br/>
+            <h1>Gracias!</h1>
+            <a href="https://sofrcu.github.com/">https://sofrcu.github.com/</a>
+            <br/>
+            <div>
+                <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">
+                    <img alt="Licencia Creative Commons" style="border-width:0; height: 1.5em;"
+                         src="img/cc-by-sa.png"/>
+                </a>
+            </div>
+            <div>
+                Esta obra de <a xmlns:cc="https://creativecommons.org/ns#" href="https://github.com/aretche/"
+                                property="cc:attributionName" rel="cc:attributionURL">Gabriel Arellano</a> está bajo
+                una licencia <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative
+                Commons Atribución-CompartirIgual 4.0 Internacional.</a>
+            </div>
+        </section>
+    </div>
+</div>
+<script src="../../reveal.js/4.0.2/dist/reveal.js"></script>
+<script>
+    // Full list of configuration options available here:
+    // https://github.com/hakimel/reveal.js#configuration
+    Reveal.initialize({
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+        hideCursorTime: 1000,
+        hash: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        pdfSeparateFragments: false, //Que imprima todas los fragmentos en una sola hoja
+
+        // Optional reveal.js plugins. More info https://github.com/hakimel/reveal.js#dependencies
+        dependencies: [
+            { src: '../../reveal.js/4.0.2/plugin/search/search.js', async: true },
+            { src: '../../reveal.js/4.0.2/plugin/zoom/zoom.js', async: true },
+            { src: '../../reveal.js/4.0.2/plugin/notes/notes.js', async: true }
+        ]
+    });
+    var url = 'https://bit.ly/3lcN5tm';
+    document.getElementById("codigo-qr").src =  "https://chart.apis.google.com/chart?cht=qr&chld=H|0&chs=300x300&chl="+escape(url);
+    document.getElementById("url").innerHTML = url
+</script>
+</body>
+</html>
