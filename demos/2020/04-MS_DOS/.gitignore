@@ -2,4 +2,4 @@
 *
 # But not these files...
 !.gitignore
-!01_ms_dos.md
+!01_ms_dos.*
