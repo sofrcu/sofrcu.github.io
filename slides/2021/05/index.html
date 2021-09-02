@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Sitemas Operativos Monotarea: MS-DOS</title>
+
+    <meta name="description" content="Sistemas Operativos Monotarea: MS-DOS">
+    <meta name="author" content="Gabriel Arellano">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/theme/black.css" id="theme">
+</head>
+
+<body>
+
+<div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+
+        <section>
+            <h2>Sistemas Operativos Monotarea</h2>
+            <h3>MS-DOS</h3>
+            <img id="codigo-qr" src="#" alt="Código QR" style="width: 6em;"/>
+            <p id="url"></p>
+        </section>
+
+        <section>
+            <section>
+                <h2>Introducción</h2>
+                <br/>
+                <h3>
+                    Documental "El Triunfo de los Nerds - Parte 2"
+                </h3>
+            </section>
+            <section>
+                <h2>Historia de MS-DOS</h2>
+                <br/>
+                <img style="height: 10em;" src="img/00_historia_dos.png"/>
+            </section>
+            <section>
+                <h2>Timeline de MS-DOS</h2>
+                <img style="height: 10em;" src="img/dos_timeline.png"/>
+                <p>J-DOS, NEC y DOS/V: versiones para Japón y China</p>
+            </section>
+            <section>
+                <h2>Objetivos de Diseño</h2>
+                <br/>
+                <ul>
+                    <li class="fragment fade-in">
+                        Destinado a un único usuario.
+                    </li>
+                    <li class="fragment fade-in">
+                        Interfaz de línea de comandos (CLI).
+                    </li>
+                    <li class="fragment fade-in">
+                        Organizado por capas.
+                    </li>
+                    <li class="fragment fade-in">
+                        Permite ejecutar un solo programa a la vez.
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2>Capas de MS-DOS</h2>
+                <img style="height: 10em;" src="img/01_capas_dos.png"/>
+            </section>
+            <section>
+                <h2>Capa BIOS</h2>
+                <br/>
+                <blockquote class="fragment fade-in">
+                    Encargada de abstraer el acceso al hardware de E/S.
+                </blockquote>
+                <blockquote class="fragment fade-in">
+                    En MS-DOS está formada por dos partes: una parte que se implementa en ROM (ROM BIOS) y una parte en
+                    en SO (IO.SYS).
+                </blockquote>
+            </section>
+            <section>
+                <h2>Capa DOS</h2>
+                <br/>
+                <blockquote class="fragment fade-in">
+                    Contiene el código necesario para la gestión de la memoria y los archivos y directorios.
+                </blockquote>
+                <blockquote class="fragment fade-in">
+                    Se implementa mediante el archivo MSDOS.SYS presente en el disco de inicio.
+                </blockquote>
+            </section>
+            <section>
+                <h2>COMMAND.COM</h2>
+                <br/>
+                <blockquote class="fragment fade-in">
+                    Es el shell de línea de comandos. Reside en el archivo COMMAND.COM.
+                </blockquote>
+                <blockquote class="fragment fade-in">
+                    Recibe y procesa los comandos del usuario. No es interpretativo.
+                </blockquote>
+                <blockquote class="fragment fade-in">
+                    Se puede emplear otro shell en lugar del command.com.
+                </blockquote>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Gestión de Memoria</h2>
+                <br/>
+                <ul>
+                    <li class="fragment fade-in">
+                        Pensada para ejecutar un solo programa.
+                    </li>
+                    <li class="fragment fade-in">
+                        Usaba algoritmo de primer ajuste (luego permitió peor ajuste).
+                    </li>
+                    <li class="fragment fade-in">
+                        Se organizaba en RAM y ROM.
+                    </li>
+                    <li class="fragment fade-in">
+                        Máximo de 1MB de RAM.
+                    </li>
+                    <li class="fragment fade-in">
+                        Memoria Expandida (EMS) y Extendida (XMS).
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2>Memoria EMS/XMS</h2>
+                <img style="height: 10em;" src="img/mem_expansion_board.jpg"/>
+                <p>Placa de expansión de memoria AT (3 MB).</p>
+            </section>
+            <section>
+                <h2>Organización de Memoria</h2>
+                <img style="height: 10em;" src="img/02_mapa_memoria_dos.png"/>
+            </section>
+            <section>
+                <h2>Asignación de Memoria</h2>
+                <br/>
+                <ul>
+                    <li class="fragment fade-in">
+                        Los .exe definen mínimo y máximo a usar. Los .com utilizan toda la TPA.
+                    </li>
+                    <li class="fragment fade-in">
+                        En la TPA puede haber varios programas cargados.
+                    </li>
+                    <li class="fragment fade-in">
+                        La memoria se asigna en bloques y se puede solicitar dinámicamente.
+                    </li>
+                    <li class="fragment fade-in">
+                        Máximo de 1MB de RAM.
+                    </li>
+                    <li class="fragment fade-in">
+                        Memoria Expandida (EMS) y Extendida (XMS).
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2>Asignación de Bloques</h2>
+                <br/>
+                <ul>
+                    <li class="fragment fade-in">
+                        Usa algoritmo de primer ajuste y una lista enlazada de bloques.
+                    </li>
+                    <li class="fragment fade-in">
+                        Bloques de tamaño variable.
+                    </li>
+                    <li class="fragment fade-in">
+                        Se mantiene una lista de enlazada de bloques de memoria.
+                    </li>
+                    <li class="fragment fade-in">
+                        Dos bloques libres/ocupadas contiguos se fusionan.
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2>Organización de Memoria</h2>
+                <br/>
+                <p><img style="height: 2em;" src="img/05_lista_bloques_memoria.png"/><br/>
+                    Lista enlazada de bloques.
+                </p>
+                <p><img style="height: 4em;" src="img/03_bloque_memoria.png"/><br/>
+                    Encabezado de Bloque.
+                </p>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Adm. de Procesos</h2>
+                <br/>
+                <ul>
+                    <li class="fragment fade-in">
+                        MS-DOS no fue escrito en código reentrante.
+                    </li>
+                    <li class="fragment fade-in">
+                        No permite multitarea pero permite mantener más de un programa residente en memoria.
+                    </li>
+                    <li class="fragment fade-in">
+                        Se puede cambiar rápidamente entre programas residentes utilizando interrupciones.
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2>Interrupciones</h2>
+                <br/>
+                <ul>
+                    <li class="fragment fade-in">
+                        256 interrupciones y sus manejadores.
+                    </li>
+                    <li class="fragment fade-in">
+                        Se clasifican en internas, externas, y de software.
+                    </li>
+                    <li class="fragment fade-in">
+                        Una ejemplo de interrupción SW es la "TSR".
+                    </li>
+                    <li class="fragment fade-in">
+                        La sincronización de interrupciones debe realizarse con precaución.
+                    </li>
+                </ul>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Adm. de Dispositivos</h2>
+                <br/>
+                <ul>
+                    <li class="fragment fade-in">
+                        DOS no reordena las solicitudes por se monotarea.
+                    </li>
+                    <li class="fragment fade-in">
+                        A partir de la versión 3 se implementa spooling.
+                    </li>
+                    <li class="fragment fade-in">
+                        Dispositivos accesibles mediante puertos de E/S.
+                    </li>
+                    <li class="fragment fade-in">
+                        BIOS brinda acceso a los dispositivos simples. En caso de dispositivos especiales se pueden
+                        utilizar controladores de dispositivo.
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2>Adm. de Archivos</h2>
+                <br/>
+                <ul>
+                    <li class="fragment fade-in">
+                        Brinda acceso a archivos secuenciales, directos (aleatorios), e indexados secuenciales.
+                    </li>
+                    <li class="fragment fade-in">
+                        Organiza los archivos con: Unidades, Directorios y Archivos.
+                    </li>
+                    <li class="fragment fade-in">
+                        Directorios con estructura de árbol.
+                    </li>
+                    <li class="fragment fade-in">
+                        Se puede acceder a los archivos mediante rutas relativas y absolutas.
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2>Árbol de Directorios</h2>
+                <img style="height: 10em;" src="img/06_arbol_directorios.png"/>
+            </section>
+            <section>
+                <h2>File Allocation Table</h2>
+                <img style="height: 10em;" src="img/07_fat.png"/>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Interfaz de usuario</h2>
+                <ul>
+                    <li class="fragment fade-in">
+                        Basada en comandos (inspirados en verbos del inglés).
+                    </li>
+                    <li class="fragment fade-in">
+                        Cuenta con comandos internos (dentro de COMMAND.COM) y externos.
+                    </li>
+                    <li class="fragment fade-in">
+                        Permite la creación de archivos por lotes (.BAT)
+                    </li>
+                    <li class="fragment fade-in">
+                        Brinda redirecciones, filtros y tuberías.
+                    </li>
+                </ul>
+            </section>
+            <section>
+                <h2>Demo de MS-DOS</h2>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Bibliografía</h2>
+                <br/>
+                <ul style="list-style-type: none;">
+                    <li>McIver: Sistemas Operativos - Capítulo 14.
+                    </li>
+                </ul>
+            </section>
+
+            <section>
+                <br/><br/>
+                <h1>Gracias!</h1>
+                <a href="https://sofrcu.github.com/">https://sofrcu.github.com/</a>
+                <br/>
+                <div>
+                    <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">
+                        <img alt="Licencia Creative Commons" style="border-width:0; height: 1.5em;"
+                             src="img/cc-by-sa.png"/>
+                    </a>
+                </div>
+                <div>
+                    Esta obra de <!--suppress XmlUnusedNamespaceDeclaration -->
+                    <a xmlns:cc="https://creativecommons.org/ns#" href="https://github.com/aretche/"
+                       property="cc:attributionName" rel="cc:attributionURL">Gabriel Arellano</a> está bajo
+                    una
+                    licencia <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es">Creative
+                    Commons
+                    Atribución-CompartirIgual 4.0 Internacional.</a>
+                </div>
+            </section>
+        </section>
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/markdown/markdown.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/highlight/highlight.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/zoom/zoom.js"></script>
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">-->
+<!--<script src="https://cdn.jsdelivr.net/npm/reveal.js-chalkboard@1.0.0/chalkboard.js"></script>-->
+<script>
+    Reveal.initialize({
+
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        pdfSeparateFragments: false, //Que imprima todas los fragmentos en una sola hoja
+
+        // chalkboard: { // font-awesome.min.css must be available
+        //     src: "chalkboard/chalkboard.json",
+        //     toggleChalkboardButton: { left: "80px" },
+        //     toggleNotesButton: { left: "130px" },
+        // },
+
+        // plugins: [ RevealMarkdown, RevealHighlight, RevealZoom, RevealChalkboard ],
+        plugins: [RevealMarkdown, RevealHighlight, RevealZoom,],
+    });
+    var url = 'https://bit.ly/3l5Jy0X';
+    document.getElementById("codigo-qr").src = "https://chart.apis.google.com/chart?cht=qr&chld=H|0&chs=300x300&chl=" + escape(url);
+    document.getElementById("url").innerHTML = url
+</script>
+</body>
+</html>
