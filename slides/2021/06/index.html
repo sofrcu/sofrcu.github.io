@@ -1,0 +1,385 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>S.O. Multitarea Monousuario</title>
+
+    <meta name="description" content="Sitemas Operativos Multitarea Monousuario">
+    <meta name="author" content="Gabriel Arellano">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/theme/black.css" id="theme">
+</head>
+
+<body>
+
+<div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+
+        <section>
+            <h2>Unidad 3</h2>
+            <h3>S.O. Multitarea Monousuario</h3>
+            <img id="codigo-qr" src="#" alt="Código QR" style="width: 6em;"/>
+            <p id="url"></p>
+        </section>
+        <section>
+            <section>
+                <h2>Repaso: Proceso</h2>
+                <img style="float: left; height: 8em;" src="img/8_2-Modelo_7_Estados.png"
+                     alt="Diagrama transición de estados"/>
+                <br/><br/>
+                <ul>
+                    <li class="fragment fade-in">Procesos.</li>
+                    <li class="fragment fade-in">Estados.</li>
+                    <li class="fragment fade-in">Transiciones.</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Planificación de la CPU</h2>
+                <p class="fragment fade-in">
+                    Hasta ahora hemos discutido:
+                </p>
+                <ul>
+                    <li class="fragment fade-in">FCFS.</li>
+                    <li class="fragment fade-in">Prioridades.</li>
+                    <li class="fragment fade-in">Garantizada.</li>
+                    <li class="fragment fade-in">SRTF, SJN.</li>
+                    <li class="fragment fade-in">HRRN.</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Apropiación</h2>
+
+                <blockquote class="fragment fade-in">
+                    Apropiación es la facultad del S.O. de quitarle un recurso a un proceso. <br/>Por ejemplo, la CPU.
+                </blockquote>
+
+                <ul style="list-style-type: none">
+                    <li class="fragment fade-in">Al agregar apropiación:</li>
+                    <li class="fragment fade-in">FCFS <span class="fragment fade-in" style="color: greenyellow">&#8594; Round Robin</span>
+                    </li>
+                    <li class="fragment fade-in">SRTF (R = Runtime) <span class="fragment fade-in"
+                                                                          style="color: greenyellow">&#8594; SRTF (R = Remainig)</span>
+                    </li>
+                    <li class="fragment fade-in">Prioridad <span
+                            class="fragment fade-in" style="color: greenyellow">&#8594; Prioridad Apropiativa</span>
+                    </li>
+                </ul>
+
+            </section>
+            <section>
+                <h2>Colas multinivel</h2>
+                <br/>
+                <p class="fragment fade-in">
+                    Podemos tener una o varias colas de listos.
+                </p>
+                <p class="fragment fade-in">
+                    Cada una con el mismo o diferentes algoritmos.
+                </p>
+                <p class="fragment fade-in">
+                    Pueden tener mecanismos de "retroalimentación".
+                </p>
+            </section>
+            <section>
+                <h2>Ejemplo colas multinivel</h2>
+                <img style="float: left; height: 8em; margin-right: 1em;" src="img/silverschatz_cola_multinivel.jpg"
+                     alt="Diagrama transición de estados"/>
+                <p class="fragment fade-in">Dos colas RR y una FCFS.</p>
+                <p class="fragment fade-in">Arriba las de mayor prioridad.</p>
+                <p class="fragment fade-in">Al agotar cuantum cae la prioridad.</p>
+            </section>
+            <section>
+                <h2>Evaluación de Algoritmos</h2>
+
+                <p class="fragment fade-in">
+                    Existen diferentes criterios para evaluar los algoritmos de planificación.
+                </p>
+
+                <ul>
+                    <li class="fragment fade-in">Producción (throughput)</li>
+                    <li class="fragment fade-in">Tiempo medio de retorno</li>
+                    <li class="fragment fade-in">Tiempo medio de respuesta</li>
+                    <li class="fragment fade-in">Utilización de la CPU</li>
+                    <li class="fragment fade-in">Tiempo medio de espera</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Otras consideraciones</h2>
+
+                <p class="fragment fade-in">
+                    Hay otros aspectos que impactan en la planificación de procesos.
+                </p>
+
+                <ul>
+                    <li class="fragment fade-in">Planificación a largo plazo.</li>
+                    <li class="fragment fade-in">Afinidad al procesador.</li>
+                    <li class="fragment fade-in">Modelo de creación de procesos.</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Hilos</h2>
+                <br/>
+                <p class="fragment fade-in">¿Qué es un hilo?</p>
+                <br/>
+            </section>
+            <section>
+                <h2>Ejecución con Hilos</h2>
+                <img style="height: 8em;" src="img/silverschatz_thread_diagram.jpg"
+                     alt="Ejecución con hilos"/>
+                <p>Ejecución con y sin Hilos</p>
+            </section>
+            <section>
+                <h2>Ejemplo de Hilos</h2>
+                <br/>
+                <pre><code class="bash" data-trim>
+user@localhost:~$ pstree -t -l -a 21778
+oosplash --writer
+  ├─soffice.bin --writer --splash-pipe=5
+  │   ├─{PipeIPC}
+  │   ├─{dconf worker}
+  │   ├─{gdbus}
+  │   ├─{gmain}
+  │   └─{rtl_cache_wsupd}
+  ├─{osl_executeProc}
+  └─{rtl_cache_wsupd}
+                </code></pre>
+                <p>Hilos de LibreOffice Writer en GNU/Linux</p>
+            </section>
+            <section>
+                <h2>Nivel Usuario / Nivel kernel</h2>
+                <img style="float: left; height: 8em;" src="img/hilo_nivel_usuario.jpg"
+                     alt="Diagrama transición de estados"/>
+                <img style="float: right; height: 8em;" src="img/hilo_nivel_kernel.jpg"
+                     alt="Diagrama transición de estados"/>
+            </section>
+            <section>
+                <h2>Nivel Usuario / Nivel kernel</h2>
+                <img style="height: 8em;" src="img/hilos_nivel_comparacion.png"
+                     alt="Comparación hilos usuario/kernel"/>
+                <p>Hilos a nivel usuario y kernel</p>
+            </section>
+            <section>
+                <h2>Procesos vs. Hilos</h2>
+                <br/>
+                <p class="fragment fade-in">¿Qué tienen en común?</p>
+                <p class="fragment fade-in">¿En qué difieren?</p>
+                <p class="fragment fade-in">Ventajas / Desventajas</p>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Gestión de Memoria con Multitarea</h2>
+            </section>
+            <section>
+                <h2>Particiones Fijas</h2>
+                <img style="height: 8em;" src="img/10_6-Multiples_Procesos_Numero_Fijo.png"
+                     alt="Particiones Fijas"/>
+                <p>Multiples procesos de tamaño fijo</p>
+            </section>
+            <section>
+                <h2>Particiones Fijas</h2>
+                <img style="height: 8em;" src="img/10_7-Fragmentacion_Interna.png"
+                     alt="Fragmentación interna"/>
+                <p>Fragmentación interna</p>
+            </section>
+            <section>
+                <h2>Particiones Variables</h2>
+                <img style="height: 8em;" src="img/10_8-Multiple_Procesos_Tamanio_Variable.png"
+                     alt="Particiones Variables"/>
+                <p>Multiples procesos de tamaño variable</p>
+            </section>
+            <section>
+                <h2>Particiones Variables</h2>
+                <img style="height: 8em;" src="img/10_9-Fragmentacion_Compactacion.png"
+                     alt="Compactación de memoria"/>
+                <p>Fragmentación externa y compactación.</p>
+            </section>
+            <section>
+                <h2>Carga dinámica</h2>
+                <p class="fragment fade-in">Carga dinámica de partes del programa.</p>
+                <ul>
+                    <li class="fragment fade-in">Overlays</li>
+                    <li class="fragment fade-in">Librerías de carga dinámica</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Paginación</h2>
+            </section>
+            <section>
+                <h2>Acceso paginado</h2>
+                <img style="height: 8em;" src="img/11_1-Acceso_Paginado.png"
+                     alt="Acceso a memoria paginado"/>
+                <p>Acceso a memoria usando paginación.</p>
+            </section>
+            <section>
+                <h2>Control de Acceso</h2>
+            </section>
+            <section>
+                <h2>Optimizaciones</h2>
+                <ul>
+                    <li class="fragment fade-in">TLB</li>
+                    <li class="fragment fade-in">Tablas multinivel</li>
+                    <li class="fragment fade-in">Tabla invertida</li>
+                    <li class="fragment fade-in">Múltiples tamaños de página</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Acceso con TLB</h2>
+                <img style="height: 8em;" src="img/11_3-Acceso_TLB.png"
+                     alt="Acceso a memoria paginado"/>
+                <p>Acceso a memoria usando paginación y TLB.</p>
+            </section>
+            <section>
+                <h2>Tabla multinivel</h2>
+                <img style="height: 8em;" src="img/11_4-Tabla_Paginas_2_Niveles.png"
+                     alt="Acceso a memoria paginado"/>
+                <p>Tabla de página multinivel.</p>
+            </section>
+            <section>
+                <h2>Tabla invertida</h2>
+                <img style="height: 8em;" src="img/11_5-Tabla_Paginas_Invertida.png"
+                     alt="Acceso a memoria paginado"/>
+                <p>Tabla de páginas invertida.</p>
+            </section>
+            <section>
+                <h2>Segmentación</h2>
+            </section>
+            <section>
+                <h2>Proceso segmentado</h2>
+                <img style="height: 8em;" src="img/11_6-Segmentacion_Proceso.png"
+                     alt="Segmentando un proceso"/>
+                <p>Segmentando un proceso.</p>
+            </section>
+            <section>
+                <h2>Acceso segmentado</h2>
+                <img style="height: 8em;" src="img/11_7-Acceso_Memoria_Segmentada.png"
+                     alt="Acceso a memoria segmentado"/>
+                <p>Acceso a memoria segmentado.</p>
+            </section>
+            <section>
+                <h2>Segmentación Paginada</h2>
+                <img style="height: 8em;" src="img/11_8-Segmentacion_Paginada.png"
+                     alt="Acceso a memoria con segmentación paginada"/>
+                <p>Acceso a memoria con segmentación paginada.</p>
+            </section>
+            <section>
+                <h2>Paginación bajo Demanda</h2>
+                <img style="height: 8em;" src="img/11_10-Tabla_Paginas_Con_Fallos.png"
+                     alt="Tabla de páginas con páginas no residentes"/>
+                <p>Tabla de páginas con páginas no residentes.</p>
+            </section>
+            <section>
+                <h2>Paginación bajo Demanda</h2>
+                <p class="fragment fade-in">Algunas consideraciones:</p>
+                <ul>
+                    <li class="fragment fade-in">Tamaño del conjunto residente</li>
+                    <li class="fragment fade-in">Estrategia de Reemplazo (local o global)</li>
+                    <li class="fragment fade-in">Algoritmo de reemplazo</li>
+                    <li class="fragment fade-in">Páginas "sucias" o "limpias"</li>
+                    <li class="fragment fade-in">Tasa de fallos de página</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Reemplazo de páginas</h2>
+                <p class="fragment fade-in">Algoritmos de reemplazo:</p>
+                <ul>
+                    <li class="fragment fade-in">FIFO</li>
+                    <li class="fragment fade-in">Óptimo</li>
+                    <li class="fragment fade-in">LRU</li>
+                    <li class="fragment fade-in">Del Reloj</li>
+                    <li class="fragment fade-in">Segunda Oportunidad</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Balanceo de Fallos</h2>
+                <img style="height: 8em;" src="img/11_13-Page_Limit_Balancing.png"
+                     alt="Balanceo de la tasa de fallos de página"/>
+                <p>Balanceo de la tasa de fallos de página.</p>
+            </section>
+            <section>
+                <h2>Otros funcionalidades</h2>
+                <p class="fragment fade-in">Hay otras funcionalidades necesarias</p>
+                <ul>
+                    <li class="fragment fade-in">Memoria compartida entre procesos</li>
+                    <li class="fragment fade-in">Archivos mapeados en memoria</li>
+                </ul>
+            </section>
+        </section>
+        <section>
+            <h2>Bibliografía</h2>
+            <br/>
+            <ul style="float: left; list-style-type: none;">
+                <li><strong>Elmasri</strong> - S.O.: Un enfoque en espiral.</li>
+                <li>
+                    <ul>
+                        <li>Capítulo 8: Secciones 8.4.6 a 8.6</li>
+                        <li>Capítulo 10: Secciones 10.4 a 10.6</li>
+                        <li>Capítulo 11: Secciones 11.1 a 11.6.2</li>
+                    </ul>
+                </li>
+            </ul>
+            <img src="img/portada-ssoo-ueee-elmasri-grande.jpg" alt="Portada Elmasri"
+                 style="float: right; height: 5em;"/>
+            <br/>
+        </section>
+        <section>
+            <br/><br/>
+            <h1>Gracias!</h1>
+            <a href="https://sofrcu.github.com/">https://sofrcu.github.com/</a>
+            <br/>
+            <div>
+                <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">
+                    <img alt="Licencia Creative Commons" style="border-width:0; height: 1.5em;"
+                         src="img/cc-by-sa.png"/>
+                </a>
+            </div>
+            <div>
+                Esta obra de <!--suppress XmlUnusedNamespaceDeclaration -->
+                <a xmlns:cc="https://creativecommons.org/ns#" href="https://github.com/aretche/"
+                   property="cc:attributionName" rel="cc:attributionURL">Gabriel Arellano</a> está bajo
+                una
+                licencia <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es">Creative Commons
+                Atribución-CompartirIgual 4.0 Internacional.</a>
+            </div>
+        </section>
+    </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/reveal.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/markdown/markdown.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/highlight/highlight.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.2/plugin/zoom/zoom.js"></script>
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">-->
+<!--<script src="https://cdn.jsdelivr.net/npm/reveal.js-chalkboard@1.0.0/chalkboard.js"></script>-->
+<script>
+    Reveal.initialize({
+
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        pdfSeparateFragments: false, //Que imprima todas los fragmentos en una sola hoja
+
+        // chalkboard: { // font-awesome.min.css must be available
+        //     src: "chalkboard/chalkboard.json",
+        //     toggleChalkboardButton: { left: "80px" },
+        //     toggleNotesButton: { left: "130px" },
+        // },
+
+        // plugins: [ RevealMarkdown, RevealHighlight, RevealZoom, RevealChalkboard ],
+        plugins: [RevealMarkdown, RevealHighlight, RevealZoom,],
+    });
+    var url = 'https://bit.ly/3nzCvQZ';
+    document.getElementById("codigo-qr").src = "https://chart.apis.google.com/chart?cht=qr&chld=H|0&chs=300x300&chl=" + escape(url);
+    document.getElementById("url").innerHTML = url
+</script>
+
+</body>
+</html>
