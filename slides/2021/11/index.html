@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>S.O. de Tiempo Real</title>
+    <meta name="description" content="S.O. de Tiempo Real">
+    <meta name="author" content="Gabriel Arellano">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/theme/black.css" id="theme">
+</head>
+
+<body>
+
+<div class="reveal">
+
+    <div class="slides">
+
+        <!-- Use external markdown resource, separate slides by three newlines; vertical slides by two newlines -->
+        <section data-markdown="slides.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n"></section>
+
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/reveal.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/markdown/markdown.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/highlight/highlight.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.1.0/plugin/zoom/zoom.js"></script>
+<!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">-->
+<!--<script src="https://cdn.jsdelivr.net/npm/reveal.js-chalkboard@1.0.0/chalkboard.js"></script>-->
+
+<script>
+
+    Reveal.initialize({
+
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        pdfSeparateFragments: false, //Que imprima todas los fragmentos en una sola hoja
+
+        // chalkboard: { // font-awesome.min.css must be available
+        //     src: "chalkboard/chalkboard.json",
+        //     toggleChalkboardButton: { left: "80px" },
+        //     toggleNotesButton: { left: "130px" },
+        // },
+
+        // plugins: [ RevealMarkdown, RevealHighlight, RevealZoom, RevealChalkboard ],
+        plugins: [ RevealMarkdown, RevealHighlight, RevealZoom, ],
+    });
+
+</script>
+
+</body>
+</html>
