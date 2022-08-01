@@ -1,0 +1,99 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<!-- saved from url=(0049)https://www.cs.hmc.edu/~geoff/countdowntimer.html -->
+<html lang="en-US"><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+    
+    <meta name="keywords" content="egg timer, countdown timer">
+    <meta name="description" content="countdown timer">
+    <style>
+	<!--
+	-->
+    </style>
+    <title>
+    Countdown Timer
+    </title>
+</head>
+
+<body>
+<center><h1>User-Configurable Countdown Timer</h1></center>
+<p>
+This page provides a simple Javascript-based countdown timer.  It was
+created for conference session chairs, so that they can show a
+remaining-time display to speakers.  However, others may find it
+useful as well.
+
+</p><p>
+By default, the timer operates as follows: it counts down from five
+minutes to zero minutes, updating every ten seconds.  When one minute
+remains, the background turns yellow and the timer is updated every
+five seconds.  At 30 seconds remaining, the background turns red and
+updates are continuous.  Finally, when time runs out, the counter
+starts blinking.  The counter can be restarted by simply reloading the
+counter page.
+
+</p><p>
+All aspects of the counter can be configured by changing entries in
+the following form.
+
+</p><p>
+</p><form action="./countdown.html" method="GET" enctype="application/x-www-form-urlencoded">
+
+<h3>Timer Options</h3>
+<p>
+Count down for <input type="text" name="timeLeftMinutes" size="3" value="15">
+minutes and <input type="text" name="timeLeftSeconds" size="3" value="0"> seconds.
+<br>
+Update counter every <input type="text" name="roundTo" size="2" value="1"> seconds.
+<br>
+Use warning color when <input type="text" name="warnTime" size="3" value="120"> seconds left
+and update every <input type="text" name="warnRoundTo" size="2" value="1"> seconds.
+<br>
+Use alarm color when <input type="text" name="alarmTime" size="3" value="60"> seconds left
+and update every <input type="text" name="alarmRoundTo" size="2" value="1"> seconds.
+<br>
+Blink when time is expired: <input type="checkbox" name="doneBlink" value="true" checked="">
+<br>
+Countinue counting to negative numbers after time is expired: <input type="checkbox" name="showNegative" value="true">
+</p><h3>Appearance Options</h3>
+<p>
+Display timer in a <input type="text" name="fontSize" size="5" value="256">
+<select name="fontUnit"><option value="pt" selected="">point</option>
+<option value="em">em</option>
+<option value="ex">ex</option>
+<option value="px">pixel</option>
+<option value="pct">percent</option>
+</select>
+<input type="text" name="timerFont" size="8" value="sans-serif"> font.
+<br>
+During normal countdown, display timer in
+<input type="text" name="normalForeColor" size="10" value="navy"> on a
+<input type="text" name="normalBackColor" size="10" value="green"> background.
+<br>
+During warning period, display timer in
+<input type="text" name="warnForeColor" size="10" value="navy"> on a
+<input type="text" name="warnBackColor" size="10" value="yellow"> background.
+<br>
+During alarm period, display timer in
+<input type="text" name="alarmForeColor" size="10" value="white"> on a
+<input type="text" name="alarmBackColor" size="10" value="red"> background.
+</p><h3>Sound Options</h3>
+<p>
+Beep <input type="text" name="warnBeeps" size="3" value="0"> times
+at <input type="text" name="warnBeepFreq" size="4" value="440"> Hertz
+for <input type="text" name="warnBeepDuration" size="4" value="200"> milliseconds each
+when the warning time is reached.
+<br>
+Beep <input type="text" name="alarmBeeps" size="3" value="0"> times
+at <input type="text" name="alarmBeepFreq" size="4" value="440"> Hertz
+for <input type="text" name="alarmBeepDuration" size="4" value="200"> milliseconds each
+when the alarm time is reached.
+<br>
+Beep <input type="text" name="doneBeeps" size="3" value="0"> times
+at <input type="text" name="doneBeepFreq" size="4" value="440"> Hertz
+for <input type="text" name="doneBeepDuration" size="4" value="200"> milliseconds each
+when time expires.
+</p><p>
+<input type="submit" value="Start the timer">
+</p></form>
+
+
+</body></html>
