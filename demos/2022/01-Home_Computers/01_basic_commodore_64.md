@@ -1,5 +1,5 @@
-COMMODORE 64 BASIC
-==================
+% COMMODORE 64 BASIC
+
 
 Iniciar el emulador VICE en modo Drean Commodore 64.
 
@@ -8,8 +8,8 @@ x64 -model drean
 ```
 
 
-Programa básico
----------------
+# Programa básico
+
 
 Escribir:
 
@@ -21,8 +21,7 @@ Tipear `LIST`
 
 Tipear `RUN`
 
-Programa con iteraciones
-------------------------
+# Programa con iteraciones
 
 Tipear `NEW`
 
@@ -48,8 +47,7 @@ Listamos para ver los cambios con `LIST`
 Ejecutamos nuevamente tipeando `RUN`
 
 
-Imprimir caracteres ASCII
--------------------------
+# Imprimir caracteres ASCII
 
 Tipear `NEW`
 
@@ -82,8 +80,7 @@ Tipear `RUN`
 
 Para ver otros caracteres consultar una tabla ASCII: https://www.c64-wiki.com/wiki/PETSCII  
 
-Manipular valores en memoria
-----------------------------
+# Manipular valores en memoria
 
 POKE / PEEK  Setea / Lee una dirección de memoria
 
@@ -134,8 +131,7 @@ PRINT PEEK(65534)
 - 255 = C Plus/4, C16
 - 114 = VIC20
 
-Commodore 64 "One-liners"
--------------------------
+# Commodore 64 "One-liners"
 
 Imprime algo interesante:
 ```basic
@@ -158,8 +154,7 @@ Reproduce sonidos al azar:
 
 Tipear `RUN`
 
-Referencias
------------
+# Referencias
 
 - *Manual de usuario de C64* https://www.lemon64.com/manual/
 - *10 PRINT*, un libro sobre el impacto de la commodre: https://10print.org/

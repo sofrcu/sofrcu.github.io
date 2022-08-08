@@ -1,16 +1,13 @@
-Emuladores de Home Computers
-============================
+% Emuladores de Home Computers
 
-Emulador VICE
--------------
+# Emulador VICE
 
 Instalar el emulador VICE http://vice-emu.sourceforge.net/
 ```
 sudo apt-get install vice
 ```
 
-Emulador openMSX
-----------------
+# Emulador openMSX
 
 Instalar openMSX 
 ```
