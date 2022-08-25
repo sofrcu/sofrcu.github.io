@@ -1,0 +1,509 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>Sitemas Operativos Monotarea: CP/M</title>
+
+    <meta name="description" content="Sitemas Operativos Monotarea: CP/M">
+    <meta name="author" content="Gabriel Arellano">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/black.css" id="theme">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/chalkboard/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/customcontrols/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+<div class="reveal">
+
+    <!-- Any section element inside this container is displayed as a slide -->
+    <div class="slides">
+
+        <section>
+            <h2>Sitemas Operativos Monotarea</h2>
+            <h3>CP/M</h3>
+            <img id="codigo-qr" src="#" alt="Código QR" style="width: 6em;"/>
+            <p id="url"></p>
+        </section>
+
+        <section>
+            <section>
+                <h2>Introducción</h2>
+                <br/>
+                <p>
+                    Los monitores y el software de las primeras computadoras personales.
+                </p>
+                <aside class="notes">
+                    Qué era un monitor? <br/>
+                </aside>
+            </section>
+            <section>
+                <h2>Monitores</h2>
+                <p class="fragment fade-in" style="float: left">
+                    Operaciones típicas de un monitor:
+                </p>
+                <ul>
+                    <li class="fragment fade-in">
+                        Mostrar un caracter en la pantalla o un teletipo.
+                    </li>
+                    <li class="fragment fade-in">
+                        Obtener un caracter del teclado.
+                    </li>
+                    <li class="fragment fade-in">
+                        Grabar el contenido de la memoria a un dispositivo de almacenamiento.
+                    </li>
+                    <li class="fragment fade-in">
+                        Restaurar el contenido de la memoria desde un dispositivo de almacenamiento.
+                    </li>
+                    <li class="fragment fade-in">
+                        Imprimir un caracter en la impresora.
+                    </li>
+                </ul>
+                <aside class="notes">
+                    ...
+                </aside>
+            </section>
+            <section>
+                <h2>Monitores</h2>
+                <p style="float: left">
+                    Por ejemplo, para mostrar el caracter '1' por pantalla:
+                </p>
+                <ol>
+                    <li class="fragment fade-in">
+                        Colocar el valor 31H en un registro determinado.
+                    </li>
+                    <li class="fragment fade-in">
+                        Colocar el valor de la operación "mostrar" en otro registro.
+                    </li>
+                    <li class="fragment fade-in">
+                        Invocar a la interrupción asociada al monitor.
+                    </li>
+                    <li class="fragment fade-in">
+                        Luego de mostrar el caracter, el monitor coloca un valor de estado en otro registro.
+                    </li>
+                </ol>
+                <aside class="notes">
+                    ...
+                </aside>
+            </section>
+            <section>
+                <h2>Demo de SCP 8086 Monitor</h2>
+                <h3>(Monitor de Altair 8800)</h3>
+            </section>
+            <section>
+                <h2>Demo de TEDMON</h2>
+                <h3>(Monitor de Commodore 128)</h3>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>La crisis del software y CP/M</h2>
+                <br/>
+                <p>
+                    Los monitores y el software de las primeras computadoras personales.
+                </p>
+                <aside class="notes">
+                    Cada monitor tenía diferentes funcionalidades. <br/>
+                    Cada monitor tenía su manera de llamar a las funciones. <br/>
+                    Cada monitor tenía su manera de pasar parámetros. <br/>
+                    Portabilidad vs Performance.
+                </aside>
+            </section>
+            <section>
+                <h2>Componentes de CP/M</h2>
+                <br/>
+                <ul>
+                    <li class="fragment fade-in">
+                        <strong>BIOS</strong>: es similar a un monitor pero con una interfaz estandarizada.
+                    </li>
+                    <li class="fragment fade-in">
+                        <strong>BDOS</strong>: es el núcleo del sistema operativo, brinda llamadas al sistema
+                        independientes del HW a los programas de aplicación.
+                    </li>
+                    <li class="fragment fade-in">
+                        <strong>CCP</strong>: es el shell de línea de comandos
+                    </li>
+                </ul>
+                <aside class="notes">
+                    BIOS: Basic Input/Output System <br/>
+                    BDOS: Basic Disk Operating System <br/>
+                    CCP: Console Command Processor
+                </aside>
+            </section>
+            <section>
+                <h2>Una PC de la época</h2>
+                <div class="fragment">
+                    <img height="430px" src="img/elmasri/figura_3.1.png"
+                         alt="Componentes de una PC de la época"/>
+                    <br/>
+                    Elmasri: Figura 3.1
+                </div>
+                <aside class="notes">
+                    ...
+                </aside>
+            </section>
+            <section>
+                <h2>Características de las PCs de la época</h2>
+                <br/>
+                <ol>
+                    <li class="fragment fade-in">
+                        Memoria principal limitada en tamaño.
+                    </li>
+                    <li class="fragment fade-in">
+                        El formato de discos estaba estandarizado.
+                    </li>
+                    <li class="fragment fade-in">
+                        El manejo de interrupciones era principalmente para E/S.
+                    </li>
+                </ol>
+                <aside class="notes">
+                    Memoria desde 1KB hasta 64/128KB.<br/>
+                    Formato del floppy de 8" 500KB (2H / 77T / 26S / 128B)<br/>
+                    No había IRQs de planificación de la CPU.
+                </aside>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Manejo de la E/S</h2>
+                <br/>
+                <p class="fragment fade-in">
+                    El manejo de la E/S estaba limitado por la poca variedad
+                    de dispositivos de E/S disponibles.
+                </p>
+                <p class="fragment fade-in">
+                    Un problema era la falta de flexibilidad al manejar
+                    el teclado, la pantalla y el almacenamiento.
+                </p>
+                <p class="fragment fade-in">
+                    Otro problema era pérdida de performance al delegar en
+                    el S.O. la gestión de la E/S.
+                </p>
+                <aside class="notes">
+                    ...
+                </aside>
+            </section>
+            <section>
+                <h2>Manejo de la E/S</h2>
+                <br/>
+                <p class="fragment fade-in">
+                    <strong>Entrada por Teclado:</strong> Portabilidad vs. Flexibilidad
+                </p>
+                <br/>
+                <p class="fragment fade-in">
+                    <strong>Salida de Video:</strong> Portabilidad vs. Funcionalidad vs. Performance
+                </p>
+                <aside class="notes">
+                    ...
+                </aside>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>El sistema de Archivos</h2>
+                <br/>
+                <p class="fragment fade-in">
+                    Uno de los pricipales servicios prestados por CP/M era un sistema de archivos portable.
+                </p>
+                <p class="fragment fade-in">
+                    Cerca del 75% de las llamadas al sistema estaban relacionadas con el sistema de archivos.
+                </p>
+                <p class="fragment fade-in">
+                    El sistema de archivos estaba basado en el disco flexible de 8 pulgadas.
+                </p>
+                <aside class="notes">
+                    ...
+                </aside>
+            </section>
+            <section>
+                <h2>El sistema de Archivos</h2>
+                <div class="fragment">
+                    <img height="430px" src="img/elmasri/figura_3.2.png"
+                         alt="Estructura de un disco de 8 pulgadas"/>
+                    <br/>
+                    Un disco de 8" - Elmasri: Figura 3.2
+                </div>
+                <aside class="notes">
+                    2 caras (cabezas)<br/>
+                    77 pistas <br/>
+                    26 sectores <br/>
+                    128 bytes por sector<br/>
+                    2 * 77 * 26 * 128 = 512512 B (500 KB)<br/>
+                </aside>
+            </section>
+            <section>
+                <h2>El sistema de Archivos</h2>
+                <br/>
+                <div class="fragment fade-in" style="float: left">
+                    <p>
+                        Cada sistema de archivo se didive en:
+                    </p>
+                    <ul>
+                        <li>
+                            Área Reservada (área de booteo)
+                        </li>
+                        <li>
+                            Área de Directorio
+                        </li>
+                        <li>
+                            Área de Almacenamiento de Datos
+                        </li>
+                    </ul>
+                </div>
+                <img class="fragment fade-in" height="200px" style="float: right" src="img/elmasri/figura_3.3.png"
+                     alt="Estructura del sistema de archivos"/>
+                <aside class="notes">
+                    ...
+                </aside>
+            </section>
+            <section>
+                <h2>El Área de Booteo</h2>
+                <p class="fragment fade-in">
+                    Contiene el código binario para iniciar la computadora y cargar
+                    el Sistema Operativo.
+                </p>
+                <p class="fragment fade-in">
+                    Las versiones cargables del BIOS, BDOS y CPP se escriben en este área.
+                    No son parte de ningún archivo y son invisibles para el usuario.
+                </p>
+                <p class="fragment fade-in">
+                    Al iniciar la computadora, un programa en la ROM lee estos archivos y los
+                    carga en memoria, este proceso se conoce como <em>"booteo"</em>.
+                </p>
+                <aside class="notes">
+                    ...
+                </aside>
+            </section>
+            <section>
+                <h2>El Área de Directorio</h2>
+                <br/>
+                <p class="fragment fade-in">
+                    Es de tamaño fijo y contiene 64 entradas de 32 bytes cada una.
+                </p>
+                <p class="fragment fade-in">
+                    Cada entrada almacena información sobre un archivo
+                    (aunque puede ser necesario utilizar varias entradas para un mismo archivo)
+                </p>
+                <p class="fragment fade-in">
+                    Sólo hay un directorio sin subdirectorios.
+                </p>
+                <aside class="notes">
+                    ...
+                </aside>
+            </section>
+            <section>
+                <h2>El Área de Directorio (cont)</h2>
+                <br/>
+                <br/>
+                <p class="fragment fade-in">
+                    No se almacena información sobre fechas ni horas.
+                </p>
+                <p class="fragment fade-in">
+                    No se almacena el tamaño del archivo (hay que calcularlo).
+                </p>
+                <p class="fragment fade-in">
+                    Si el directorio se llena, se llena el disco.
+                </p>
+                <aside class="notes">
+                    ...
+                </aside>
+            </section>
+            <section>
+                <h2>Entrada de Directorio</h2>
+                <div class="fragment">
+                    <img height="430px" src="img/elmasri/figura_3.4.png"
+                         alt="Entrada de directorio de CP/M"/>
+                    <br/>
+                    Entrada de Directorio - Elmasri: Figura 3.4
+                </div>
+                <aside class="notes">
+                    ...
+                </aside>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Ejecutando un Programa</h2>
+                <p class="fragment fade-in">
+                    El código binario debe estar en memoria,
+                    el proceso de carga lo efectúa normalmente el CCP.
+                </p>
+                <p class="fragment fade-in">
+                    Los programas se cargan a partir de la dirección 100H.
+                </p>
+                <p class="fragment fade-in">
+                    se les asigna espacio de pila en la memoria alta antes del S.O.
+                </p>
+                <p class="fragment fade-in">
+                    El proceso se ejecuta de principio a fin, si requiere E/S el procesador
+                    permanece ocioso hasta finalizar la operación (E/S programada).
+                </p>
+                <aside class="notes">
+                    ...
+                </aside>
+            </section>
+            <section>
+                <h2>Programa en Memoria</h2>
+                <div class="fragment">
+                    <img height="430px" src="img/elmasri/figura_3.5.png"
+                         alt="Programa cargado en memoria"/>
+                    <br/>
+                    Programa cargado en memoria - Elmasri: Figura 3.5
+                </div>
+                <aside class="notes">
+                    ...
+                </aside>
+            </section>
+            <section>
+                <h2>Gestión de Memoria</h2>
+                <p class="fragment fade-in">
+                    Se carga un solo programa en memoria. No existe detección o
+                    prevención de colisiones entre la pila y el programa.
+                </p>
+                <p class="fragment fade-in">
+                    El S.O. se coloca en la memoria alta y en caso de ser necesario se puede
+                    desalojar al CCP para tener más memoria de programa.
+                </p>
+                <p class="fragment fade-in">
+                    No contempla el heap, éste lo maneja el programa de aplicación.
+                    Si el programa no cabe en memoria pricipal puede usar overlays.
+                </p>
+                <aside class="notes">
+                    ...
+                </aside>
+            </section>
+            <section>
+                <h2>Mapa de Memoria de CP/M</h2>
+                <div class="fragment">
+                    <img height="430px" src="img/cpm_memory_map.gif"
+                         alt="Mapa de Memoria de CP/M"/>
+                    <br/>
+                    Mapa de Memoria de CP/M
+                </div>
+                <aside class="notes">
+                    ...
+                </aside>
+            </section>
+            <section>
+                <h2>Memoria Reservada en CP/M</h2>
+                <div class="fragment">
+                    <img height="430px" src="img/cpm_low_storage_area.gif"
+                         alt="Memoria Reservada en CP/M"/>
+                    <br/>
+                    Memoria Reservada en CP/M
+                </div>
+                <aside class="notes">
+                    ...
+                </aside>
+            </section>
+            <section>
+                <h2>Overlays en CP/M</h2>
+                <div class="fragment">
+                    <img height="430px" src="img/elmasri/figura_3.6.png"
+                         alt="Overlays en CP/M"/>
+                    <br/>
+                    Overlays en CP/M - Elmasri: Figura 3.6
+                </div>
+                <aside class="notes">
+                    ...
+                </aside>
+            </section>
+        </section>
+        <section>
+            <section>
+                <h2>Demo de CP/M</h2>
+                <h3>(Altair 8800)</h3>
+            </section>
+            <section>
+                <h2>Demo de CP/M</h2>
+                <h3>(Commodore 128 en modo Z80)</h3>
+            </section>
+        </section>
+        <section>
+            <h2>Bibliografía</h2>
+            <br/>
+            <ul style="list-style-type: none;">
+                <li>Elmasri: Sistemas Operativos - Capítulo 3.
+                </li>
+            </ul>
+            <br/>
+            <p>
+                Por si tienen tiempo y ganas de pulir el inglés: <br/>"Get Lamp" <br/> <a
+                    href="https://www.youtube.com/watch?v=LRhbcDzbGSU&t=465s">https://www.youtube.com/watch?v=LRhbcDzbGSU&t=465s</a>
+            </p>
+
+        </section>
+
+        <section>
+            <br/><br/>
+            <h1>Gracias!</h1>
+            <a href="https://sofrcu.github.com/">https://sofrcu.github.com/</a>
+            <br/>
+            <div>
+                <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">
+                    <img alt="Licencia Creative Commons" style="border-width:0; height: 1.5em;" src="img/cc-by-sa.png"/>
+                </a>
+            </div>
+            <div>
+                Esta obra de <a xmlns:cc="https://creativecommons.org/ns#" href="https://github.com/aretche/"
+                                property="cc:attributionName" rel="cc:attributionURL">Gabriel Arellano</a> está bajo una
+                licencia <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative Commons
+                Atribución-CompartirIgual 4.0 Internacional.</a>
+            </div>
+        </section>
+
+    </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/markdown/markdown.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/highlight/highlight.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/zoom/zoom.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/chalkboard/plugin.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/customcontrols/plugin.js"></script>
+
+<script>
+
+    Reveal.initialize({
+
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        pdfSeparateFragments: false, //Que imprima todos los fragmentos en una sola hoja
+
+        chalkboard: {
+            boardmarkerWidth: 3,
+            chalkWidth: 4,
+            chalkEffect: 1.0,
+        },
+        customcontrols: {
+            controls: [
+                {
+                    icon: '<i class="fa fa-pen-square"></i>',
+                    title: 'Toggle chalkboard (B)',
+                    action: 'RevealChalkboard.toggleChalkboard();'
+                },
+                {
+                    icon: '<i class="fa fa-pen"></i>',
+                    title: 'Toggle notes canvas (C)',
+                    action: 'RevealChalkboard.toggleNotesCanvas();'
+                }
+            ]
+        },
+        plugins: [RevealMarkdown, RevealHighlight, RevealZoom, RevealChalkboard, RevealCustomControls,],
+    });
+    const url = 'https://bit.ly/3wTBqaz';
+    document.getElementById("codigo-qr").src = "https://chart.apis.google.com/chart?cht=qr&chld=H|0&chs=300x300&chl=" + escape(url);
+    document.getElementById("url").innerHTML = url
+</script>
+
+</body>
+</html>
