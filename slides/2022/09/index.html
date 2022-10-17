@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+
+    <title>S.O. Multitarea Monousuario</title>
+
+    <meta name="description" content="Sitemas Operativos Multitarea Multiusuario">
+    <meta name="author" content="Gabriel Arellano">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/black.css" id="theme">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/chalkboard/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/customcontrols/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+<div class="reveal">
+
+    <!-- Any section element inside of this container is displayed as a slide -->
+    <div class="slides">
+
+        <section>
+            <h2>Unidad 3</h2>
+            <h3>S.O. Multitarea Multiusuario</h3>
+            <img id="codigo-qr" src="#" alt="Código QR" style="width: 6em;"/>
+            <p id="url"></p>
+        </section>
+        <section>
+            <section>
+                <h2>Concurrencia</h2>
+                <br/>
+                <p class="fragment fade-in">Multiprogramación</p>
+                <p class="fragment fade-in">Multiprocesador</p>
+                <p class="fragment fade-in">Multicomputadora</p>
+            </section>
+            <section>
+                <h2>Motivaciones de la Concurrencia</h2>
+                <br/>
+                <p class="fragment fade-in">Facilita la programación</p>
+                <p class="fragment fade-in">Acelera los cálculos</p>
+                <p class="fragment fade-in">Posibilita el uso interactivo</p>
+                <p class="fragment fade-in">Permite un mejor aprovechamiento de los recursos</p>
+            </section>
+            <section>
+                <h2>Procesos concurrentes</h2>
+                <br/>
+                <p class="fragment fade-in">Los procesos que ejecutan de forma concurrente en un sistema se pueden clasificar
+                    como procesos independientes o cooperantes.</p>
+                <br/>
+            </section>
+            <section>
+                <h2>Problemas Clásicos de IPC</h2>
+                <br/>
+                <p class="fragment fade-in">Sección Crítica</p>
+                <p class="fragment fade-in">Productor - Consumidor</p>
+                <p class="fragment fade-in">Lectores - Escritores</p>
+                <p class="fragment fade-in">Cliente - Servidor</p>
+            </section>
+            <section>
+                <h2>Sección Crítica</h2>
+                <br/>
+                <img style="height: 8em;" src="img/5_3_generacion_pid.png"/>
+                <p>Ejemplo: generación de un PID</p>
+            </section>
+            <section>
+                <h2>Sección Crítica</h2>
+                <br/>
+                <p class="fragment fade-in">Es necesario un mecanismo de sincronización donde cada proceso:</p>
+                <ul>
+                    <li class="fragment fade-in">Solicite permiso para entrar en la sección crítica</li>
+                    <li class="fragment fade-in">Indique cuándo salga de la sección critica</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Solución al problema</h2>
+                <br/>
+                <p class="fragment fade-in">Cualquier solución a este problema debe cumplir los tres requisitos siguientes:</p>
+                <ol>
+                    <li class="fragment fade-in">Exclusión mutua</li>
+                    <li class="fragment fade-in">Progreso</li>
+                    <li class="fragment fade-in">Espera acotada</li>
+                </ol>
+            </section>
+            <section>
+                <h2>Productor - Consumidor</h2>
+                <br/>
+                <img style="height: 8em;" src="img/5_5_productor_consumidor.png"/>
+                <p>Problema del Productor - Consumidor.</p>
+            </section>
+            <section>
+                <h2>Productor - Consumidor</h2>
+                <br/>
+                <p class="fragment fade-in">Deberá disponer de algún mecanismo de comunicación que permita a los procesos intercambiar información</p>
+                <p class="fragment fade-in">Deberá sincronizar el acceso al mecanismo de comunicación para que la interacción entre ellos no sea problemática</p>
+            </section>
+            <section>
+                <h2>Lectores - Escritores</h2>
+                <br/>
+                <img style="height: 8em;" src="img/5_6_lectores_escritores.png"/>
+                <p>Problema de los Lectores - Escritores.</p>
+            </section>
+            <section>
+                <h2>Lectores - Escritores</h2>
+                <br />
+                <p class="fragment fade-in">Tiene las siguientes restricciones:</p>
+                <ul>
+                    <li class="fragment fade-in">Sólo se permite que un escritor tenga acceso al objeto al mismo tiempo.</li>
+                    <li class="fragment fade-in">Mientras el escritor esté accediendo al objeto, ningún otro proceso lector ni
+                        escritor podrá acceder.</li>
+                    <li class="fragment fade-in">Se permiten múltiples lectores accediendo al objeto.</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Cliente - Servidor</h2>
+                <br/>
+                <img style="height: 8em;" src="img/5_7_cliente_servidor.png"/>
+                <p>Problema del Cliente - Servidor.</p>
+            </section>
+            <section>
+                <h2>Cliente - Servidor</h2>
+                <br/>
+                <p class="fragment fade-in">Los procesos llamados servidores ofrecen una serie de servicios a otros
+                    procesos que se denominan clientes.</p>
+                <p class="fragment fade-in">El proceso servidor puede residir en la misma máquina que el cliente
+                    o en una distinta.</p>
+                <p class="fragment fade-in">El S.O. debe ofrecer servicios que permitan comunicarse a
+                    los procesos cliente y servidor.</p>
+            </section>
+            <section>
+                <h2>Mecanismos IPC</h2>
+                <br/>
+                <ul>
+                    <li class="fragment fade-in">Archivos.</li>
+                    <li class="fragment fade-in">Tuberías.</li>
+                    <li class="fragment fade-in">Variables en memoria compartida.</li>
+                    <li class="fragment fade-in">Paso de mensajes.</li>
+                    <li class="fragment fade-in">Señales.</li>
+                    <li class="fragment fade-in">Semáforos.</li>
+                    <li class="fragment fade-in">Mutex y variables condicionales.</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Archivos</h2>
+                <br/>
+                <p class="fragment fade-in">Permite comunicar a un número potencialmente ilimitado de procesos.</p>
+                <p class="fragment fade-in">Los servidores de archivos ofrecen servicios sencillos y fáciles de utilizar.</p>
+                <p class="fragment fade-in">Es un mecanismo bastante poco eficiente.</p>
+                <p class="fragment fade-in">Necesita algún otro mecanismo de sincronización.</p>
+            </section>
+            <section>
+                <h2>Tuberías</h2>
+                <br/>
+                <img style="height: 8em;" src="img/5_8_tuberia.png"/>
+                <p>Comunicación en una tubería.</p>
+            </section>
+            <section>
+                <h2>Tuberías</h2>
+                <br/>
+                <p class="fragment fade-in">Es un mecanismo de comunicación y sincronización.</p>
+                <p class="fragment fade-in">Es como un pseudoarchivo mantenido por el S.O.</p>
+                <p class="fragment fade-in">Cada proceso ve la tubería como un conducto con dos extremos.</p>
+                <p class="fragment fade-in">El flujo de datos es unidireccional.</p>
+            </section>
+            <section>
+                <h2>Tuberías</h2>
+                <br />
+                <p class="fragment fade-in">Escritura en una tubería:</p>
+                <ul>
+                    <li class="fragment fade-in">Si la tubería se encuentra llena o se llena durante la escritura,
+                        la operación bloquea al proceso escritor.</li>
+                    <li class="fragment fade-in">Si no hay ningún proceso con la tubería abierta para lectura, la operación
+                        devuelve el correspondiente error.</li>
+                    <li class="fragment fade-in">Una operación de escritura sobre una tubería se realiza de forma atómica.</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Tuberías</h2>
+                <br />
+                <p class="fragment fade-in">Lectura en una tubería:</p>
+                <ul>
+                    <li class="fragment fade-in">Si la tubería está vacía, la llamada bloquea al proceso en la operación de lectura.</li>
+                    <li class="fragment fade-in">Si no hay escritores y la tubería está vacía, la operación devuelve fin de archivo.</li>
+                    <li class="fragment fade-in">Al igual que las escrituras, las operaciones de lectura sobre una tubería son atómicas.</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Paso de Mensajes</h2>
+                <br />
+                <p class="fragment fade-in">Los procesos se comunican mediante dos operaciones básicas:</p>
+                <ul>
+                    <li class="fragment fade-in">send(destino, mensaje)</li>
+                    <li class="fragment fade-in">receive (origen, mensaje)</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Paso de Mensajes</h2>
+                <br />
+                <p class="fragment fade-in">Aspectos de diseño:</p>
+                <ul>
+                    <li class="fragment fade-in">Tamaño del mensaje</li>
+                    <li class="fragment fade-in">Flujo de datos</li>
+                    <li class="fragment fade-in">Nombrado</li>
+                    <li class="fragment fade-in">Sincronización</li>
+                    <li class="fragment fade-in">Almacenamiento</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Paso de Mensajes</h2>
+                <br/>
+                <img style="height: 8em;" src="img/5_15_colas_puertos.png"/>
+                <p>Mensajes usando colas y puertos.</p>
+            </section>
+            <section>
+                <h2>Paso de Mensajes</h2>
+                <br/>
+                <img style="height: 8em;" src="img/5_16_servidor_secuencial_concurrente.png"/>
+                <p>Servidores secuenciales o concurrentes.</p>
+            </section>
+            <section>
+                <h2>Señales</h2>
+                <br/>
+                <p class="fragment fade-in">Las señales pueden utilizarse para sincronizar procesos.</p>
+                <p class="fragment fade-in">Las señales tienen un comportamiento asíncrono.</p>
+                <p class="fragment fade-in">Las señales no se encolan.</p>
+            </section>
+            <section>
+                <h2>Semáforos</h2>
+                <br/>
+                <p class="fragment fade-in">Un semáforo [Dijkstra, 1965] es un mecanismo de sincronización que se utiliza
+                    generalmente en sistemas con memoria compartida.</p>
+                <p class="fragment fade-in">Un semáforo es un objeto con un valor entero, al que se le puede asignar un valor
+                    inicial no negativo y al que sólo se puede acceder utilizando dos operaciones atómicas: wait y signal.</p>
+            </section>
+            <section>
+                <h2>Semáforos</h2>
+                <br/><br/>
+                <div style="text-align: center">
+                    <img src="img/semaforo_wait.png" style="float: left; height: 200px;"/>
+                    <img src="img/semaforo_signal.png" style="float: right; height: 200px;"/>
+                </div>
+                <p>Operaciones sobre un semáforo.</p>
+            </section>
+            <section>
+                <h2>Mutex y variables condicionales</h2>
+                <br/>
+                <p class="fragment fade-in">Son mecanismos especialmente concebidos para la sincronización de procesos ligeros.</p>
+                <p class="fragment fade-in">Sobre un mutex se pueden realizar dos operaciones atómicas básicas: lock y unlock.</p>
+            </section>
+            <section>
+                <h2>Mutex y variables condicionales</h2>
+                <br/>
+                <p class="fragment fade-in">Una variable condicional es una variable de sincronización asociada a un mutex
+                    que se utiliza para bloquear a un proceso hasta que ocurra algún suceso.</p>
+                <p class="fragment fade-in">Sobre un mutex se pueden realizar dos operaciones atómicas básicas: c_wait y c_signal.</p>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2>Bibliografía</h2>
+                <br/>
+                <ul>
+                    <li><strong>Carretero</strong> - Capítulo 5 (hasta 5.5)</li>
+                </ul>
+            </section>
+            <section>
+                <br/><br/>
+                <h1>Gracias!</h1>
+                <a href="https://sofrcu.github.com/">https://sofrcu.github.com/</a>
+                <br/>
+                <div>
+                    <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">
+                        <img alt="Licencia Creative Commons" style="border-width:0; height: 1.5em;"
+                             src="img/cc-by-sa.png"/>
+                    </a>
+                </div>
+                <div>
+                    Esta obra de <!--suppress XmlUnusedNamespaceDeclaration -->
+                    <a xmlns:cc="https://creativecommons.org/ns#" href="https://github.com/aretche/"
+                       property="cc:attributionName" rel="cc:attributionURL">Gabriel Arellano</a> está bajo
+                    una
+                    licencia <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/deed.es">Creative Commons
+                    Atribución-CompartirIgual 4.0 Internacional.</a>
+                </div>
+            </section>
+        </section>
+    </div>
+
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/markdown/markdown.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/highlight/highlight.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/zoom/zoom.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/chalkboard/plugin.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/customcontrols/plugin.js"></script>
+
+<script>
+
+    Reveal.initialize({
+
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        pdfSeparateFragments: false, //Que imprima todos los fragmentos en una sola hoja
+
+        chalkboard: {
+            boardmarkerWidth: 3,
+            chalkWidth: 4,
+            chalkEffect: 1.0,
+        },
+        customcontrols: {
+            controls: [
+                {
+                    icon: '<i class="fa fa-pen-square"></i>',
+                    title: 'Toggle chalkboard (B)',
+                    action: 'RevealChalkboard.toggleChalkboard();'
+                },
+                {
+                    icon: '<i class="fa fa-pen"></i>',
+                    title: 'Toggle notes canvas (C)',
+                    action: 'RevealChalkboard.toggleNotesCanvas();'
+                }
+            ]
+        },
+        plugins: [RevealMarkdown, RevealHighlight, RevealZoom, RevealChalkboard, RevealCustomControls,],
+    });
+    const url = 'https://bit.ly/3oIWxck';
+    document.getElementById("codigo-qr").src = "https://chart.apis.google.com/chart?cht=qr&chld=H|0&chs=300x300&chl=" + escape(url);
+    document.getElementById("url").innerHTML = url
+</script>
+
+</body>
+</html>
