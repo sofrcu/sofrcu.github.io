@@ -1,0 +1,287 @@
+<!doctype html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+    <title>Introducción a los Sistemas Operativos</title>
+    <meta name="description" content="Introducción a los Sistemas Operativos">
+    <meta name="author" content="Gabriel Arellano">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/black.css" id="theme">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/chalkboard/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/customcontrols/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+
+<body>
+<!-- Wrap the entire slide show in a div using the "reveal" class. -->
+<div class="reveal">
+    <!-- Wrap all slides in a single "slides" class -->
+    <div class="slides">
+        <!-- ALL SLIDES GO HERE -->
+        <!-- Each section element contains an individual slide -->
+        <section>
+            <h2>Introducción a los Sistemas Operativos</h2>
+            <h3>Sistemas Operativos - UTN FRCU</h3>
+            <img id="codigo-qr" src="#" alt="Código QR" style="width: 6em;"/>
+            <p id="url"></p>
+        </section>
+        <section>
+            <section>
+                <br/>
+                <br/><br/>
+                <h2>¿Qué es un Sistema Operativo?</h2>
+                <br/><br/>
+                <br/>
+            </section>
+
+            <section>
+                <h2>Tipos de Usuarios</h2>
+                <br/>
+                <ul style="list-style-type: none;">
+                    <li class="fragment fade-in">Usuarios Finales</li>
+                    <li class="fragment fade-in">Programadores de Aplicaciones</li>
+                    <li class="fragment fade-in">Programadores de Sistemas</li>
+                    <li class="fragment fade-in">Administradores de Sistemas</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Vistas del Sistema Operativo</h2>
+                <br/>
+                <img src="img/computer_abstraction_layers-es.svg.png" alt="Capas de abstracción."
+                     style="float: left; width: 338px;"/>
+                <div class="fragment fade-in">
+                    <h3>Vista del Usuario</h3>
+                    <p>
+                        Cómo los usuarios o los programas ven
+                        o interactúan con los recursos.
+                    </p>
+                </div>
+                <div class="fragment fade-in">
+                    <h3>Vista del Sistema</h3>
+                    <p>
+                        Cómo el Sistema Operativo interactúa
+                        con el hardware.
+                    </p>
+                </div>
+            </section>
+
+            <section>
+                <h2>Vista del Sistema</h2>
+                <div class="fragment fade-in">
+                    <img src="img/figura-1_1-movimiento_mouse.png" alt="Movimiento del mouse."
+                         style="height: 450px;"/>
+                    <br/>
+                </div>
+            </section>
+
+            <section>
+                <h2>Vista del Sistema</h2>
+                <h3 class="fragment fade-in">Ejemplo: Copiar de USB a disco...</h3>
+                <ol>
+                    <li class="fragment fade-in">Comprobar que el archivo esté en el pendrive.</li>
+                    <li class="fragment fade-in">Ver si el archivo existe en el disco rígido.</li>
+                    <li class="fragment fade-in">Crear el nombre de archivo en el directorio.</li>
+                    <li class="fragment fade-in">Buscar espacio en el disco para el archivo.</li>
+                    <li class="fragment fade-in">Leer los sectores de datos del pendrive.</li>
+                    <li class="fragment fade-in">Escribir los sectores de datos en el disco.</li>
+                    <li class="fragment fade-in">Actualizar la entrada de directorio en el disco.</li>
+                    <li class="fragment fade-in">Actualizar la info de espacio del disco.</li>
+                </ol>
+                <div class="fragment fade-in">
+                    <p class="fragment highlight-red">Ejecutar todo esto en segundos (o menos) !!!</p>
+                </div>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2>¿Qué hace un Sistema Operativo?</h2>
+                <blockquote class="fragment fade-in">
+                    Proporcionar una interfaz de alto nivel del hardware al usuario y a los programas.
+                </blockquote>
+                <blockquote class="fragment fade-in">
+                    Administrar los recursos físicos y lógicos de la computadora.
+                </blockquote>
+            </section>
+
+            <section>
+                <h2>Recursos Gestionados por el Sistema Operativo</h2>
+                <ul style="list-style-type: none;">
+                    <li class="fragment fade-in">Procesador</li>
+                    <li class="fragment fade-in">Memoria Principal y Cachés</li>
+                    <li class="fragment fade-in">Dispositivos de E/S</li>
+                    <li class="fragment fade-in">Almacenamiento Secundario</li>
+                    <li class="fragment fade-in">Sistemas de Archivos</li>
+                    <li class="fragment fade-in">Interfaces de Usuario</li>
+                    <li class="fragment fade-in">Acceso a Redes</li>
+                    <li class="fragment fade-in">Suministro de Protección y Seguridad</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Componentes de un Sistema Operativo.</h2>
+                <div class="fragment fade-in">
+                    <img src="img/figura-2_1-modulos-del-so.png" alt="Módulos del Sistema Operativo."
+                         style="height: 450px;"/>
+                    <br/>
+                </div>
+            </section>
+
+            <section>
+                <h2>Concepto de Proceso</h2>
+                <br/>
+                <blockquote class="fragment fade-in">
+                    Un Proceso, es un programa que está corriendo o en ejecución. <span
+                        class="fragment fade-in"> (?)</span>
+                </blockquote>
+            </section>
+
+            <section>
+                <h2>Estados de un Proceso</h2>
+                <div class="fragment fade-in">
+                    <img src="img/figura-2_2-diagrama_simplificado_de_estados.png"
+                         alt="Diagrama de estados de un Proceso." style="height: 550px;"/>
+                    <br/>
+                </div>
+            </section>
+
+            <section>
+                <h2>Información del Proceso</h2>
+                <div class="fragment fade-in">
+                    <img src="img/figura-2_3-informacion_de_proceso.png" alt="Información del Proceso."
+                         style="height: 550px;"/>
+                    <br/>
+                </div>
+            </section>
+
+        </section>
+        <section>
+            <section>
+                <h2>Tipos de Sistemas Operativos</h2>
+                <br/>
+                <ul style="list-style-type: none;">
+                    <li class="fragment fade-in">S.O. Monotarea y Monousuario</li>
+                    <li class="fragment fade-in">S.O. Multitarea y Monousuario</li>
+                    <li class="fragment fade-in">S.O. de Tiempo Compartido</li>
+                    <li class="fragment fade-in">S.O. de Red y S.O. Distribuidos</li>
+                    <li class="fragment fade-in">S.O. de Tiempo Real</li>
+                    <li class="fragment fade-in">S.O. para Dispositivos Móviles</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Enfoques Arquitectónicos para Construir un S.O.</h2>
+                <br/><br/>
+                <ul style="list-style-type: none;">
+                    <li class="fragment fade-in">Enfoque con Núcleo Único y Monolítico</li>
+                    <li class="fragment fade-in">Enfoque de Micronúcleo (microkernel)</li>
+                    <li class="fragment fade-in">Enfoque por Capas</li>
+                    <li class="fragment fade-in">Enfoque Cliente-Servidor</li>
+                </ul>
+            </section>
+            <section>
+                <h2>Enfoque Monolítico vs. Micronúcleo</h2>
+                <div class="fragment fade-in" style="background-color: white;">
+                    <img src="img/800px-OS-structure.svg.png" alt="Enfoque Monolítico vs. Micronúcleo."/>
+                </div>
+                <br/>
+            </section>
+            <section>
+                <h2>Arquitectura en Capas</h2>
+                <div class="fragment fade-in">
+                    <img src="img/figura-2_4-arquitectura_en_capas.png" alt="Arquitectura en Capas."/>
+                    <br/>
+                </div>
+            </section>
+            <section>
+                <h2>Arquitectura de Micronúcleo</h2>
+                <div class="fragment fade-in">
+                    <img src="img/figura-2_5-arquitectura_micronucleo.png" alt="Arquitectura de Micronúcleo"/>
+                    <br/>
+                </div>
+            </section>
+        </section>
+
+        <section>
+            <section>
+                <h2>Bibliografía</h2>
+                <br/> <br/>
+                <ul style="list-style-type: none;">
+                    <li><strong>Elmasri</strong> - S.O.: Un enfoque en espiral. (Cap. 1 y 2)</li>
+                    <li><strong>Carretero</strong> - S.O.: Una visión Aplicada. (Cap. 2)</li>
+                </ul>
+                <br/> <br/>
+                <div style="text-align: center">
+                    <img src="img/portada-ssoo-ueee-elmasri-grande.jpg" alt="Portada Elmasri"
+                         style="float: left; height: 150px;"/>
+                    <img src="img/portada-ssoo-va.jpg" alt="Portada Carretero" style="float: right; height: 150px;"/>
+                </div>
+            </section>
+            <section>
+                <br/><br/>
+                <h1>Gracias!</h1>
+                <a href="https://sofrcu.github.io/">https://sofrcu.github.io/</a>
+                <br/>
+                <div>
+                    <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">
+                        <img alt="Licencia Creative Commons" style="border-width:0; height: 1.5em;"
+                             src="img/cc-by-sa.png"/>
+                    </a>
+                </div>
+                <div>
+                    Esta obra de <a xmlns:cc="https://creativecommons.org/ns#" href="https://github.com/aretche/"
+                                    property="cc:attributionName" rel="cc:attributionURL">Gabriel Arellano</a> está bajo
+                    una licencia <a rel="license" href="https://creativecommons.org/licenses/by-sa/4.0/">Creative
+                    Commons Atribución-CompartirIgual 4.0 Internacional.</a>
+                </div>
+            </section>
+        </section>
+    </div>
+</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/markdown/markdown.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/highlight/highlight.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/zoom/zoom.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/chalkboard/plugin.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/customcontrols/plugin.js"></script>
+
+<script>
+
+    Reveal.initialize({
+
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        pdfSeparateFragments: false, //Que imprima todos los fragmentos en una sola hoja
+
+        chalkboard: {
+            boardmarkerWidth: 3,
+            chalkWidth: 4,
+            chalkEffect: 1.0,
+        },
+        customcontrols: {
+            controls: [
+                {
+                    icon: '<i class="fa fa-pen-square"></i>',
+                    title: 'Toggle chalkboard (B)',
+                    action: 'RevealChalkboard.toggleChalkboard();'
+                },
+                {
+                    icon: '<i class="fa fa-pen"></i>',
+                    title: 'Toggle notes canvas (C)',
+                    action: 'RevealChalkboard.toggleNotesCanvas();'
+                }
+            ]
+        },
+        plugins: [RevealMarkdown, RevealHighlight, RevealZoom, RevealChalkboard, RevealCustomControls,],
+    });
+    const url = 'https://bit.ly/454MY9G';
+    document.getElementById("codigo-qr").src = "https://chart.apis.google.com/chart?cht=qr&chld=H|0&chs=300x300&chl=" + escape(url);
+    document.getElementById("url").innerHTML = url
+</script>
+</body>
+</html>
