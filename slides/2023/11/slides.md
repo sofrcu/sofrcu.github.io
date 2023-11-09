@@ -4,8 +4,8 @@
 # Unidad 5
 ## S.O. de Tiempo Real
 
-![](https://chart.apis.google.com/chart?cht=qr&chld=H|0&chs=200x200&chl=https://sofrcu.github.io/slides/2022/11/) <br />
-https://sofrcu.github.io/slides/2022/11/
+![](https://chart.apis.google.com/chart?cht=qr&chld=H|0&chs=200x200&chl=https://sofrcu.github.io/slides/2023/11/) <br />
+https://sofrcu.github.io/slides/2023/11/
 <!-- .element: style="border-width:0; height: 6em;" -->
 
 
