@@ -17,7 +17,7 @@ https://sofrcu.github.io/slides/2023/11/
 * Resultados en un marco temporal específico. <!-- .element: class="fragment fade-in" -->
 * Tiempo real estricto. <!-- .element: class="fragment fade-in" -->
 * Tiempo real no estricto. <!-- .element: class="fragment fade-in" -->
-* Suelen usar sistemas integrados. <!-- .element: class="fragment fade-in" -->
+* Suelen usar sistemas integrados / embebidos. <!-- .element: class="fragment fade-in" -->
 
 
 # Características
@@ -42,6 +42,13 @@ Arquitecturas Von Neumann vs SoC.
 ![](./img/arduino_due.jpg) <!-- .element: style="border-width:0; float: left; height: 7em;" -->
 ![](./img/arduino_stm32_moneda.jpg)<br/> <!-- .element: style="border-width:0; float: rigth; height: 7em;" -->
 Dos modelos de Arduino con chips SoC ARM.
+
+
+# Sistemas On Chip
+
+![](./img/raspberry-pi-b.jpeg) <!-- .element: style="border-width:0; float: left; height: 7em;" -->
+![](./img/raspberry-pi-4.jpeg)<br/> <!-- .element: style="border-width:0; float: rigth; height: 7em;" -->
+Dos modelos de Raspberry Pi con chips SoC ARM.
 
 
 # S.O. Tiempo Real
