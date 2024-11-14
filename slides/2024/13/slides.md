@@ -110,12 +110,22 @@ Su interfaz era sencilla y diseñada para usarse con un lápiz.
 * Formas especiales: ventanas, diálogos, alertas. <!-- .element: class="fragment fade-in" -->
 
 
+# Demo Palm OS
+
+<br>
+
+Demo en emulador CloudPilot.
+
+https://cloudpilot-emu.github.io/app/
+
+<br>
+
 
 # Bibliografía
 
 <br>
 <br>
-Elamsri - Capítulo 4.
+Elmasri - Capítulo 4.
 <br>
 <br>
 
@@ -127,5 +137,4 @@ Elamsri - Capítulo 4.
 [https://sofrcu.github.com/](https://sofrcu.github.com/)
 
 [![](./img/cc-by-sa.png)](https://creativecommons.org/licenses/by-sa/4.0/) <br/> <!-- .element: style="border-width:0; height: 1.5em;" -->
-Esta obra de [Gabriel Arellano](https://github.com/aretche/) está bajo una licencia [Creative Commons Atribución-CompartirIgual 4.0 Internacional](https://creativecommons.org/licenses/by-sa/4.0/deed.es). 
-https://github.com/aretche/
+Esta obra de [Gabriel Arellano](https://github.com/aretche/) está bajo una licencia [Creative Commons Atribución-CompartirIgual 4.0 Internacional](https://creativecommons.org/licenses/by-sa/4.0/deed.es).
