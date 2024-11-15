@@ -188,7 +188,7 @@ Protecciones de Archivos.<!-- .element: class="fragment fade-in" -->
 
 # Gracias!
 
-[https://sofrcu.github.com/](https://sofrcu.github.com/)
+[https://sofrcu.github.io/](https://sofrcu.github.io/)
 
 [![](./img/cc-by-sa.png)](https://creativecommons.org/licenses/by-sa/4.0/) <br/> <!-- .element: style="border-width:0; height: 1.5em;" -->
 Esta obra de [Gabriel Arellano](https://github.com/aretche/) está bajo una licencia [Creative Commons Atribución-CompartirIgual 4.0 Internacional](https://creativecommons.org/licenses/by-sa/4.0/deed.es). 
