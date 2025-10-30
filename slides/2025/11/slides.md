@@ -51,6 +51,12 @@ Dos modelos de Arduino con chips SoC ARM.
 Dos modelos de Raspberry Pi con chips SoC ARM.
 
 
+# Sistemas On Chip
+
+![](./img/comparativa_raspberry_pi.png) <!-- .element: style="border-width:0; height: 9em;" -->
+Modelos de Raspberry Pi.
+
+
 # S.O. Tiempo Real
 
 <br>
