@@ -1,0 +1,72 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>S.O. de Tiempo Real</title>
+    <meta name="description" content="S.O. de Tiempo Real">
+    <meta name="author" content="Gabriel Arellano">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/theme/black.css" id="theme">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/chalkboard/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/customcontrols/style.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+<div class="reveal">
+
+    <div class="slides">
+
+        <!-- Use external markdown resource, separate slides by three newlines; vertical slides by two newlines -->
+        <section data-markdown="slides.md" data-separator="^\n\n\n" data-separator-vertical="^\n\n"></section>
+
+    </div>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/reveal.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/markdown/markdown.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/highlight/highlight.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.3.1/plugin/zoom/zoom.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/chalkboard/plugin.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/reveal.js-plugins@4.1.5/customcontrols/plugin.js"></script>
+
+<script>
+
+    Reveal.initialize({
+
+        controls: true,
+        progress: true,
+        history: true,
+        center: true,
+
+        transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+        pdfSeparateFragments: false, //Que imprima todos los fragmentos en una sola hoja
+
+        chalkboard: {
+            boardmarkerWidth: 3,
+            chalkWidth: 4,
+            chalkEffect: 1.0,
+        },
+        customcontrols: {
+            controls: [
+                {
+                    icon: '<i class="fa fa-pen-square"></i>',
+                    title: 'Toggle chalkboard (B)',
+                    action: 'RevealChalkboard.toggleChalkboard();'
+                },
+                {
+                    icon: '<i class="fa fa-pen"></i>',
+                    title: 'Toggle notes canvas (C)',
+                    action: 'RevealChalkboard.toggleNotesCanvas();'
+                }
+            ]
+        },
+        plugins: [RevealMarkdown, RevealHighlight, RevealZoom, RevealChalkboard, RevealCustomControls,],
+    });
+</script>
+
+</body>
+</html>
